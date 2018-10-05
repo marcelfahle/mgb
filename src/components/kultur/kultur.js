@@ -36,8 +36,8 @@ const Section = styled.section`
 `
 const Header = styled.div`
   position: relative;
-  background: transparent url(${bg}) no-repeat;
-  background-size: 105%;
+  //background: transparent url(${bg}) no-repeat;
+  //background-size: 105%;
   background-position: 25% 0%;
   &:before {
     display: block;
@@ -50,6 +50,18 @@ const Content = styled.div`
   text-align: center;
   padding-top: 18px;
   padding-bottom: 277px;
+  position: relative;
+  z-index: 50;
+  background-image: linear-gradient(to right, #ff8e00 0%, #ac005f 100%);
+  color: white;
+  clip-path: polygon(0 0.4%, 100% 0, 100% 100%, 0 92%);
+  margin-top: -4%;
+  &:before {
+    display: block;
+    content: ' ';
+    width: 100%;
+    padding-top: 4.2%;
+  }
 `
 
 const Actions = styled.div`
@@ -74,7 +86,7 @@ const LayoverElement = styled.img`
   position: absolute;
   bottom: 28px;
   right: 0px;
-  width: 90%;
+  width: 98%;
 `
 
 const Intro = styled.div`
@@ -82,6 +94,7 @@ const Intro = styled.div`
   background: white;
   color: #333333;
   padding-top: 34%;
+  margin-top: 80px;
 
   p {
     padding-bottom: 5em;
@@ -99,6 +112,7 @@ const VocalNight = styled.div`
   position: relative;
   padding-top: 37%;
   padding-bottom: 20%;
+  z-index: 60;
   img {
     position: absolute;
     top: -15%;
@@ -108,6 +122,7 @@ const VocalNight = styled.div`
 
 const Theater = styled.div`
   position: relative;
+  z-index: 70;
 `
 const TheaterIntro = styled.div`
   padding-top: 25%;
@@ -177,6 +192,9 @@ export default class KulturHeader extends PureComponent {
     return (
       <Section>
         <Header>
+          <Video id="musikmenschen-video" autoPlay loop muted playsInline>
+            <source src={withPrefix('MGB-Kultur-Header.mp4')} />
+          </Video>
           <LayoverElement src={layover} />
         </Header>
         <Content>
@@ -224,9 +242,7 @@ export default class KulturHeader extends PureComponent {
                 playsInline
               >
                 <source
-                  src={withPrefix(
-                    '/static/MGB-Kachel-Kultur-Schulorchester.mp4'
-                  )}
+                  src={withPrefix('MGB-Kachel-Kultur-Schulorchester.mp4')}
                 />
               </Video>
             </GridVideo>
@@ -263,9 +279,7 @@ export default class KulturHeader extends PureComponent {
                 playsInline
               >
                 <source
-                  src={withPrefix(
-                    '/static/MGB-Kachel-Kultur-Musical-Projektkurs.mp4'
-                  )}
+                  src={withPrefix('MGB-Kachel-Kultur-Musical-Projektkurs.mp4')}
                 />
               </Video>
             </GridVideo>

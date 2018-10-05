@@ -162,9 +162,7 @@ export default class MintHeader extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Mathematik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-MINT-Mathematik.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g1">
@@ -196,9 +194,7 @@ export default class MintHeader extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Informatik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-MINT-Informatik.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g3">
@@ -220,9 +216,7 @@ export default class MintHeader extends PureComponent {
                 playsInline
               >
                 <source
-                  src={withPrefix(
-                    '/static/MGB-Kachel-Schule-Naturwissenschaften.mp4'
-                  )}
+                  src={withPrefix('MGB-Kachel-MINT-Naturwissenschaften.mp4')}
                 />
               </Video>
             </GridVideo>
@@ -243,9 +237,7 @@ export default class MintHeader extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Technik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-MINT-Technik.mp4')} />
               </Video>
             </GridVideo>
           </Grid>

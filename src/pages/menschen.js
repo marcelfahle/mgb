@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { withPrefix } from 'gatsby-link'
 
 import header from './../components/headers/header-menschen.png'
 import PersonGrid from '../components/person-grid'
@@ -8,17 +9,36 @@ import { schulleitung, kollegium } from './../components/data'
 
 import Layout from '../layouts/'
 import { SubheadFullDark, PFullDark } from '../components/typo'
+import { Video } from './../components/VideoGrid'
+
+import menschenTitle from './../components/menschen/title.svg'
 
 const Wrapper = styled.div`
   background: #f8f8f8;
   text-align: center;
 `
 const Header = styled.div`
-  img {
+  position: relative;
+
+  background-position: 25% 0%;
+  &:before {
+    display: block;
+    content: ' ';
     width: 100%;
+    padding-top: 52%;
+  }
+  span {
+    position: absolute;
+    bottom: 27px;
+    right: -2px;
+    text-align: right;
+    img {
+      width: 93%;
+    }
   }
 `
 const Content = styled.div`
+  background: #f8f8f8;
   h3 {
     color: #4d4d4d;
 
@@ -41,7 +61,12 @@ export default class Menschen extends PureComponent {
       <Layout>
         <Wrapper>
           <Header>
-            <img src={header} />
+            <Video id="musikmenschen-video" autoPlay loop muted playsInline>
+              <source src={withPrefix('MGB-Menschen-Header.mp4')} />
+            </Video>
+            <span>
+              <img src={menschenTitle} />
+            </span>
           </Header>
           <Content>
             <SubheadFullDark>im Lehrerportrait</SubheadFullDark>

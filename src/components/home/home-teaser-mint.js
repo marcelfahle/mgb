@@ -70,9 +70,7 @@ export default class HomeTeaserMint extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Mathematik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Mathematik.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g1">
@@ -104,9 +102,7 @@ export default class HomeTeaserMint extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Informatik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Informatik.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g3">
@@ -128,9 +124,7 @@ export default class HomeTeaserMint extends PureComponent {
                 playsInline
               >
                 <source
-                  src={withPrefix(
-                    '/static/MGB-Kachel-Schule-Naturwissenschaften.mp4'
-                  )}
+                  src={withPrefix('MGB-Kachel-Schule-Naturwissenschaften.mp4')}
                 />
               </Video>
             </GridVideo>
@@ -151,9 +145,7 @@ export default class HomeTeaserMint extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Technik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Technik.mp4')} />
               </Video>
             </GridVideo>
           </Grid>

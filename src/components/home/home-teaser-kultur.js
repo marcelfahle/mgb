@@ -68,9 +68,7 @@ export default class HomeTeaserKultur extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Musik.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Musik.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g1">
@@ -102,9 +100,7 @@ export default class HomeTeaserKultur extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Kunst.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Kunst.mp4')} />
               </Video>
             </GridVideo>
             <GridItem className="g3">
@@ -125,9 +121,7 @@ export default class HomeTeaserKultur extends PureComponent {
                 muted
                 playsInline
               >
-                <source
-                  src={withPrefix('/static/MGB-Kachel-Schule-Theater.mp4')}
-                />
+                <source src={withPrefix('MGB-Kachel-Schule-Theater.mp4')} />
               </Video>
             </GridVideo>
           </Grid>
