@@ -73,7 +73,7 @@ export default class HomeHeader extends React.PureComponent {
     return (
       <Section>
         <Video id="musikmenschen-video" autoPlay loop muted playsInline>
-          <source src={withPrefix('/static/MGB-Schule-Header.mp4')} />
+          <source src={'/static/MGB-Schule-Header.mp4'} />
         </Video>
         <Content>
           <Title>Städtisches Mädchengymnasium Borbeck</Title>
