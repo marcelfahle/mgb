@@ -26,7 +26,7 @@ import kunstHeader from './kunst.png'
 import { LinkButton } from '../button'
 import menschenHeadline from './../menschen.svg'
 import PersonGrid from '../person-grid'
-import { Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
 
 import { kultur as kulturKollegen } from './../data'
 
@@ -39,12 +39,12 @@ const Header = styled.div`
   //background: transparent url(${bg}) no-repeat;
   //background-size: 105%;
   background-position: 25% 0%;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 100%;
-    padding-top: 52%;
-  }
+  //&:before {
+  //  display: block;
+  //  content: ' ';
+  //  width: 100%;
+  //  padding-top: 52%;
+  //}
 `
 const Content = styled.div`
   text-align: center;
@@ -231,58 +231,64 @@ export default class KulturHeader extends PureComponent {
             </PFullDark>
           </Intro>
 
-          <Grid elements={2} style={{ marginTop: -22 }}>
-            <GridVideo className="v1">
-              <Video
-                className="left-video-special"
-                id="orchestar-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src={withPrefix('MGB-Kachel-Kultur-Schulorchester.mp4')}
-                />
-              </Video>
-            </GridVideo>
-            <GridItem className="g1">
-              <SubheadLight>Das Schulorchester</SubheadLight>
-              <PLight>
-                Auch das Schulorchester wird zur Zeit von Herrn Sykora geleitet.
-                Hier finden alle Instrumentalisten (nicht nur die Streicher) ein
-                zuhause. Holz- und Blechbläserinnen mit entsprechenden
-                Vorkenntnissen können ab der 6. Klasse mitspielen und treffen
-                hier auf die fortgeschrittenen Streicher. Die Literatur, die das
-                Schulorchester einstudiert, ist vielseitig und reicht von
-                klassischen Stücken über Filmmusik bis zu Bearbeitungen aus dem
-                Bereich der Popmusik.
-              </PLight>
-            </GridItem>
-            <GridItem className="g2">
-              <SubheadLight>Musical Projektkurs</SubheadLight>
-              <PLight>
-                Dies ist ein englisch-sprachiger Kurs, der in der Q1
-                unterrichtet wird und die Fächer Musik und Englisch verbindet.
-                In diesem Kurs wird ein englisches Theaterstück mit eigenen
-                Kompositionen in ein Musical verwandelt, das dann am Ende des
-                Schuljahres aufgeführt wird.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v2-special">
-              <Video
-                className="right-video-special"
-                id="projektkurs-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src={withPrefix('MGB-Kachel-Kultur-Musical-Projektkurs.mp4')}
-                />
-              </Video>
-            </GridVideo>
+          <Grid>
+            <Row>
+              <GridVideo className="v1">
+                <Video
+                  className="left-video-special"
+                  id="orchestar-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source
+                    src={withPrefix('MGB-Kachel-Kultur-Schulorchester.mp4')}
+                  />
+                </Video>
+              </GridVideo>
+              <GridItem className="g1">
+                <SubheadLight>Das Schulorchester</SubheadLight>
+                <PLight>
+                  Auch das Schulorchester wird zur Zeit von Herrn Sykora
+                  geleitet. Hier finden alle Instrumentalisten (nicht nur die
+                  Streicher) ein zuhause. Holz- und Blechbläserinnen mit
+                  entsprechenden Vorkenntnissen können ab der 6. Klasse
+                  mitspielen und treffen hier auf die fortgeschrittenen
+                  Streicher. Die Literatur, die das Schulorchester einstudiert,
+                  ist vielseitig und reicht von klassischen Stücken über
+                  Filmmusik bis zu Bearbeitungen aus dem Bereich der Popmusik.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v2-special">
+                <Video
+                  className="right-video-special"
+                  id="projektkurs-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source
+                    src={withPrefix(
+                      'MGB-Kachel-Kultur-Musical-Projektkurs.mp4'
+                    )}
+                  />
+                </Video>
+              </GridVideo>
+              <GridItem className="g2">
+                <SubheadLight>Musical Projektkurs</SubheadLight>
+                <PLight>
+                  Dies ist ein englisch-sprachiger Kurs, der in der Q1
+                  unterrichtet wird und die Fächer Musik und Englisch verbindet.
+                  In diesem Kurs wird ein englisches Theaterstück mit eigenen
+                  Kompositionen in ein Musical verwandelt, das dann am Ende des
+                  Schuljahres aufgeführt wird.
+                </PLight>
+              </GridItem>
+            </Row>
           </Grid>
           <Actions>
             <PFullLight>
@@ -320,37 +326,42 @@ export default class KulturHeader extends PureComponent {
             </PFullLight>
           </TheaterIntro>
           <TheaterBody>
-            <Grid elements={2} style={{ height: 900 }}>
-              <GridVideo className="v1">
-                <img className="left-video" src={theater1} />
-              </GridVideo>
-              <GridItem className="g1">
-                <SubheadDark>Als Unterrichtsfach</SubheadDark>
-                <PDark>
-                  Besonders ist dabei die Möglichkeit „Theater“ sogar als
-                  Schulfach zu wählen. Im Wahlpflichtfach „Darstellendes Spiel“
-                  können unsere Mädchen in Klasse 8 & 9 die ganze Bandbreite der
-                  Theaterarbeit kennenlernen. Dazu gehören - neben dem Spiel auf
-                  unserer Aulabühne - das Entstehen eines Theatertextes im
-                  Schreiben eigener Szenen, Stimmtraining, Rollenarbeit,
-                  Bühnentechnik,Theaterbesuche, uvm.
-                </PDark>
-              </GridItem>
-              <GridItem className="g2" style={{ paddingTop: 40 }}>
-                <SubheadDark>Als AG</SubheadDark>
-                <PDark>
-                  Bereits ab Klasse 5 sehen wir unsere Schülerinnen in
-                  Aufführungen der Theater-AG des offenen Ganztags auf der
-                  Bühne. Für die Mittel- und Oberstufe gibt es eine gemeinsame
-                  AG, in der die Mädchen z. B. mit neuen Interpretationen von
-                  Shakespeare oder Schiller nicht nur auf der Schulbühne
-                  überzeugen, sondern auch den Sprung auf die Bühne des
-                  Grillo-Theaters im Rahmen der Essener Schultheatertage wagen.
-                </PDark>
-              </GridItem>
-              <GridVideo className="v2-special">
-                <img className="right-video-special" src={theater2} />
-              </GridVideo>
+            <Grid>
+              <Row>
+                <GridVideo className="v1">
+                  <img className="left-video" src={theater1} />
+                </GridVideo>
+                <GridItem className="g1">
+                  <SubheadDark>Als Unterrichtsfach</SubheadDark>
+                  <PDark>
+                    Besonders ist dabei die Möglichkeit „Theater“ sogar als
+                    Schulfach zu wählen. Im Wahlpflichtfach „Darstellendes
+                    Spiel“ können unsere Mädchen in Klasse 8 & 9 die ganze
+                    Bandbreite der Theaterarbeit kennenlernen. Dazu gehören -
+                    neben dem Spiel auf unserer Aulabühne - das Entstehen eines
+                    Theatertextes im Schreiben eigener Szenen, Stimmtraining,
+                    Rollenarbeit, Bühnentechnik,Theaterbesuche, uvm.
+                  </PDark>
+                </GridItem>
+              </Row>
+              <Row>
+                <GridVideo className="v2-special">
+                  <img className="right-video-special" src={theater2} />
+                </GridVideo>
+                <GridItem className="g2" style={{ paddingTop: 40 }}>
+                  <SubheadDark>Als AG</SubheadDark>
+                  <PDark>
+                    Bereits ab Klasse 5 sehen wir unsere Schülerinnen in
+                    Aufführungen der Theater-AG des offenen Ganztags auf der
+                    Bühne. Für die Mittel- und Oberstufe gibt es eine gemeinsame
+                    AG, in der die Mädchen z. B. mit neuen Interpretationen von
+                    Shakespeare oder Schiller nicht nur auf der Schulbühne
+                    überzeugen, sondern auch den Sprung auf die Bühne des
+                    Grillo-Theaters im Rahmen der Essener Schultheatertage
+                    wagen.
+                  </PDark>
+                </GridItem>
+              </Row>
             </Grid>
             <SubheadFullDark>Die grosse Bühne</SubheadFullDark>
             <PFullDark>

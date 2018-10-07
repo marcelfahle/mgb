@@ -35,7 +35,7 @@ injectGlobal`
   }
   body {
     font-family: 'Open Sans', sans-serif;
-    background: #f0f0f0;
+    background: #323537;
     //min-width: 1024px;
     p {
       line-height: 1.37em;

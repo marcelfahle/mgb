@@ -6,6 +6,7 @@ const Subhead = css`
   font-size: ${rem(50)}rem;
   font-weight: 700;
   text-transform: uppercase;
+  padding-left: 8%;
 `
 export const SubheadLight = styled.h3`
   ${Subhead};
@@ -19,29 +20,29 @@ export const SubheadMedium = styled.h3`
   ${Subhead};
   color: #4d4d4d;
 `
+const SubHeadFull = css`
+  max-width: 80%;
+  //margin-left: auto;
+  margin-right: auto;
+  padding-left: 8%;
+`
 export const SubheadFullLight = styled.h3`
   ${Subhead};
-  text-align: center;
+  ${SubHeadFull};
+  text-align: left;
   color: white;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 `
 export const SubheadFullDark = styled.h3`
   ${Subhead};
-  text-align: center;
+  ${SubHeadFull};
+  text-align: left;
   color: #333;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 `
 export const SubheadFullMedium = styled.h3`
   ${Subhead};
-  text-align: center;
+  ${SubHeadFull};
+  text-align: left;
   color: #4d4d4d;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 `
 const P = css`
   font-family: 'Open Sans';
@@ -52,13 +53,15 @@ const P = css`
   `};
 `
 const FullP = css`
-  text-align: center;
+  text-align: left;
   max-width: 80%;
-  margin-left: auto;
+  //margin-left: auto;
   margin-right: auto;
+  padding-left: 8%;
 `
 const RegularP = css`
   text-align: left;
+  padding-left: 8%;
 `
 const SmallP = css`
   font-family: 'Open Sans';

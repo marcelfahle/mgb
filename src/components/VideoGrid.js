@@ -2,49 +2,49 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 export const Grid = styled.div`
-  position: relative;
-  background-size: 100%;
-  padding-bottom: 1px;
-  box-sizing: border-box;
-  padding-top: 1px;
-  margin-bottom: 6%;
-  height: ${({ elements }) => (elements ? elements * 420 : 1680)}px;
+  //position: relative;
+  //background-size: 100%;
+  //padding-bottom: 1px;
+  //box-sizing: border-box;
+  //padding-top: 1px;
+  //margin-bottom: 6%;
+  //height: ${({ elements }) => (elements ? elements * 420 : 1680)}px;
+  margin-top: 10%;
+`
+
+export const Row = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  > * {
+    flex: 0 0 50%;
+    height: 29%;
+  }
 `
 
 export const GridItem = styled.div`
-  max-width: 43%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: absolute;
+  justify-content: flex-start;
   text-align: left;
-  height: 400px;
+  padding-top: 4%;
   &.g1,
   &.g3 {
-    margin-right: 3%;
+    > * {
+      padding-right: 4%;
+    }
     margin-left: auto;
   }
   &.g2,
   &.g4 {
-    margin-left: 3%;
-    margin-right: auto;
+    > * {
+      padding-right: 4%;
+    }
   }
-  &.g1 {
-    top: 40px;
-    right: 0;
-  }
-  &.g2 {
-    top: 456px;
-    left: 0;
-  }
-  &.g3 {
-    top: 882px;
-    right: 0;
-  }
-  &.g4 {
-    top: 1298px;
-    left: 0;
-  }
+
   h3 {
     margin-top: 0;
     margin-bottom: 0.4%;
@@ -54,51 +54,26 @@ export const GridItem = styled.div`
 `
 
 export const GridVideo = styled.div`
-  position: absolute;
-  width: 50%;
   img {
     width: 100%;
-    height: 487px;
-  }
-  &.v1 {
-    top: 0;
-    left: 0;
-  }
-  &.v2 {
-    top: 416px;
-    right: 0;
-  }
-  &.v2-special {
-    top: 455px;
-    right: 0;
-  }
-  &.v3 {
-    top: 832px;
-    left: 0;
-  }
-  &.v4 {
-    top: 1248px;
-    right: 0;
+    height: 29%;
   }
 `
 
 export const Video = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   overflow: hidden;
 
-  &.left-video {
-    clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
-  }
-  &.left-video-special {
-    clip-path: polygon(0 0, 100% 0%, 100% 96%, 0% 100%);
-  }
-  &.right-video {
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 94%);
-  }
-  &.right-video-special {
-    clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 94%);
-  }
+  //&.left-video {
+  //  clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
+  //}
+  //&.left-video-special {
+  //  clip-path: polygon(0 0, 100% 0%, 100% 96%, 0% 100%);
+  //}
+  //&.right-video {
+  //  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 94%);
+  //}
+  //&.right-video-special {
+  //  clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 94%);
+  //}
 `

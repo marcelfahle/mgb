@@ -7,7 +7,7 @@ import grid_images from './../kultur-images.png'
 import layover from './../assets/layover-kultur.svg'
 import { LinkButton } from '../button'
 import { SubheadFullLight, PFullLight, SubheadLight, PLight } from '../typo'
-import { Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
 
 const Section = styled.section`
   position: relative;
@@ -58,72 +58,79 @@ export default class HomeTeaserKultur extends PureComponent {
             Schwerpunkt aus, der mit zahlreichen Veranstaltungen und einem engen
             Bezug zum künstlerischen Leben im Stadtteil das Schuljahr belebt.
           </PFullLight>
-          <Grid elements={3}>
-            <GridVideo className="v1">
-              <Video
-                className="left-video"
-                id="musik-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-Schule-Musik.mp4')} />
-              </Video>
-            </GridVideo>
-            <GridItem className="g1">
-              <SubheadLight>Musik am MGB …</SubheadLight>
-              <PLight>
-                ... heißt Singen, Spielen, Hören und Zuhören, Komponieren,
-                Arrangieren, Analysieren und Nachdenken über Musik und Musiker.
-                Und Musik am MGB ist nicht nur ein Fach im Stundenplan.
-                <br />
-                <br />
-                Es ist auch Einstudieren, Proben und Darbieten, kurzum: das
-                Erleben von Musik.
-              </PLight>
-            </GridItem>
-            <GridItem className="g2">
-              <SubheadLight>Kunst am MGB…</SubheadLight>
-              <PLight>
-                … heißt Malen, Aquarellieren, Zeichnen, Collagieren,Drucken, mit
-                Ton arbeiten, Steine behauen, experimentelle Techniken
-                erforschen und mit dem Zufall spielen.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v2">
-              <Video
-                className="right-video"
-                id="kunst-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-Schule-Kunst.mp4')} />
-              </Video>
-            </GridVideo>
-            <GridItem className="g3">
-              <SubheadLight>Theater am MGB…</SubheadLight>
-              <PLight>
-                ... heißt Theaterluft schnuppern, Theater sehen und
-                selbstverständlich auch Theater spielen! Am Mädchengymnasium
-                können Schülerinnen von der Klasse 5 bis zum Abitur in der Q2
-                Theater als Unterrichtsfach oder AG wählen.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v3">
-              <Video
-                className="left-video"
-                id="theater-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-Schule-Theater.mp4')} />
-              </Video>
-            </GridVideo>
+          <Grid>
+            <Row>
+              <GridVideo className="v1">
+                <Video
+                  className="left-video"
+                  id="musik-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-Schule-Musik.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g1">
+                <SubheadLight>Musik am MGB …</SubheadLight>
+                <PLight>
+                  ... heißt Singen, Spielen, Hören und Zuhören, Komponieren,
+                  Arrangieren, Analysieren und Nachdenken über Musik und
+                  Musiker. Und Musik am MGB ist nicht nur ein Fach im
+                  Stundenplan.
+                  <br />
+                  <br />
+                  Es ist auch Einstudieren, Proben und Darbieten, kurzum: das
+                  Erleben von Musik.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v2">
+                <Video
+                  className="right-video"
+                  id="kunst-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-Schule-Kunst.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g2">
+                <SubheadLight>Kunst am MGB…</SubheadLight>
+                <PLight>
+                  … heißt Malen, Aquarellieren, Zeichnen, Collagieren,Drucken,
+                  mit Ton arbeiten, Steine behauen, experimentelle Techniken
+                  erforschen und mit dem Zufall spielen.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v3">
+                <Video
+                  className="left-video"
+                  id="theater-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-Schule-Theater.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g3">
+                <SubheadLight>Theater am MGB…</SubheadLight>
+                <PLight>
+                  ... heißt Theaterluft schnuppern, Theater sehen und
+                  selbstverständlich auch Theater spielen! Am Mädchengymnasium
+                  können Schülerinnen von der Klasse 5 bis zum Abitur in der Q2
+                  Theater als Unterrichtsfach oder AG wählen.
+                </PLight>
+              </GridItem>
+            </Row>
           </Grid>
           <Actions>
             <LinkButton to="/kultur" secondary>

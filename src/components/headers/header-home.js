@@ -54,10 +54,10 @@ const Subline = styled.h2`
   margin: 0 0 30px -12px;
 
   `};
-  ${mq.greaterThan('veryhuge')`
-    font-size: ${rem(183)}rem;
+  //${mq.greaterThan('veryhuge')`
+  //  font-size: ${rem(183)}rem;
 
-  `};
+  //`};
 `
 const Video = styled.video`
   position: absolute;

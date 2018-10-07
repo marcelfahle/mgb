@@ -10,7 +10,7 @@ import robertaImg from './mint-roberta.png'
 import { LinkButton } from '../button'
 import menschenHeadline from './../menschen.svg'
 import PersonGrid from '../person-grid'
-import { Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
 
 import { mint } from './../data'
 import {
@@ -70,14 +70,15 @@ const Roberta = styled.div`
   position: relative;
   background: white;
   color: #333333;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 90%);
+  padding-top: 442px;
   h4 {
   }
   p {
     max-width: 75%;
 
     padding-bottom: 5em;
+    margin-bottom: 50px;
   }
 `
 const RobertaImg = styled.img`
@@ -119,6 +120,16 @@ const MenschenSubheadline = styled.h4`
   text-align: center;
   color: #4d4d4d;
 `
+const FullVideo = styled.div`
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+  height: 442px;
+  position: absolute;
+  z-index: 70;
+  top: -30px;
+  video {
+    width: 100%;
+  }
+`
 
 export default class MintHeader extends PureComponent {
   render() {
@@ -142,104 +153,102 @@ export default class MintHeader extends PureComponent {
             Kreativität und schaffen Freiraum für Innovationen.
           </PFullLight>
 
-          <Roberta>
-            <RobertaImg src={robertaImg} />
-            <SubheadFullDark>Roberta und Wettbewerbe.</SubheadFullDark>
-            <PFullDark>
-              Spaß an Technik vermitteln, Roboter gemeinsam im Team bauen und
-              programmieren, kreativ werden und Figuren entwickeln, im
-              Wettbewerb auf der Bühne stehen: Das ist ROBERTA am MGB.
-            </PFullDark>
-          </Roberta>
-
-          <Grid elements={4} style={{ marginTop: -100 }}>
-            <GridVideo className="v1">
-              <Video
-                className="left-video"
-                id="mathematik-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-MINT-Mathematik.mp4')} />
-              </Video>
-            </GridVideo>
-            <GridItem className="g1">
-              <SubheadLight>Mathematik</SubheadLight>
-              <PLight>
-                Mathematik am MGB bedeutet, die wesentlichen Eigenschaften der
-                Mathematik wie Struktur, Wahrheit, Schönheit kennen lernen zu
-                können.
-                <br />
-                Es ist nicht nur ein Unterrichtsfach, wir nehmen auch an
-                überregionalen Wettbewerben teil.
-              </PLight>
-            </GridItem>
-            <GridItem className="g2">
-              <SubheadLight>Informatik</SubheadLight>
-              <PLight>
-                Informatik, das ist nicht nur Programmieren. Hier geht es z.B.
-                auch um das Innere eines Rechners, um Verschlüsselungen, um die
-                Nutzung des Internets und der sozialen Medien, um den
-                Datenschutz und um den sicheren Umgang mit den neuen Medien.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v2">
-              <Video
-                className="right-video"
-                id="informatik-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-MINT-Informatik.mp4')} />
-              </Video>
-            </GridVideo>
-            <GridItem className="g3">
-              <SubheadLight>Naturwissenschaften</SubheadLight>
-              <PLight>
-                Neugierig sein - Fragen zu Phänomenen in der Natur zu stellen,
-                sie zu beobachten, zu untersuchen und zu experimentieren – das
-                steht im Mittelpunkt des naturwissenschaft-lichen Unterrichts am
-                Mädchengymnasium.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v3">
-              <Video
-                className="left-video"
-                id="natur-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src={withPrefix('MGB-Kachel-MINT-Naturwissenschaften.mp4')}
-                />
-              </Video>
-            </GridVideo>
-            <GridItem className="g4">
-              <SubheadLight>Technik</SubheadLight>
-              <PLight>
-                Spaß an Technik vermitteln, Roboter gemeinsam im Team bauen und
-                programmieren, kreativ werden und Figuren entwickeln, im
-                Wettbewerb auf der Bühne stehen: Das ist ROBERTA am MGB.
-              </PLight>
-            </GridItem>
-            <GridVideo className="v4">
-              <Video
-                className="right-video"
-                id="technik-video"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={withPrefix('MGB-Kachel-MINT-Technik.mp4')} />
-              </Video>
-            </GridVideo>
+          <Grid>
+            <Row>
+              <GridVideo className="v1">
+                <Video
+                  className="left-video"
+                  id="mathematik-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-MINT-Mathematik.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g1">
+                <SubheadLight>Mathematik</SubheadLight>
+                <PLight>
+                  Mathematik am MGB bedeutet, die wesentlichen Eigenschaften der
+                  Mathematik wie Struktur, Wahrheit, Schönheit kennen lernen zu
+                  können.
+                  <br />
+                  Es ist nicht nur ein Unterrichtsfach, wir nehmen auch an
+                  überregionalen Wettbewerben teil.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v2">
+                <Video
+                  className="right-video"
+                  id="informatik-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-MINT-Informatik.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g2">
+                <SubheadLight>Informatik</SubheadLight>
+                <PLight>
+                  Informatik, das ist nicht nur Programmieren. Hier geht es z.B.
+                  auch um das Innere eines Rechners, um Verschlüsselungen, um
+                  die Nutzung des Internets und der sozialen Medien, um den
+                  Datenschutz und um den sicheren Umgang mit den neuen Medien.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v3">
+                <Video
+                  className="left-video"
+                  id="natur-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source
+                    src={withPrefix('MGB-Kachel-MINT-Naturwissenschaften.mp4')}
+                  />
+                </Video>
+              </GridVideo>
+              <GridItem className="g3">
+                <SubheadLight>Naturwissenschaften</SubheadLight>
+                <PLight>
+                  Neugierig sein - Fragen zu Phänomenen in der Natur zu stellen,
+                  sie zu beobachten, zu untersuchen und zu experimentieren – das
+                  steht im Mittelpunkt des naturwissenschaft-lichen Unterrichts
+                  am Mädchengymnasium.
+                </PLight>
+              </GridItem>
+            </Row>
+            <Row>
+              <GridVideo className="v4">
+                <Video
+                  className="right-video"
+                  id="technik-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={withPrefix('MGB-Kachel-MINT-Technik.mp4')} />
+                </Video>
+              </GridVideo>
+              <GridItem className="g4">
+                <SubheadLight>Technik</SubheadLight>
+                <PLight>
+                  Spaß an Technik vermitteln, Roboter gemeinsam im Team bauen
+                  und programmieren, kreativ werden und Figuren entwickeln, im
+                  Wettbewerb auf der Bühne stehen: Das ist ROBERTA am MGB.
+                </PLight>
+              </GridItem>
+            </Row>
           </Grid>
           <Actions>
             <SubheadFullLight>

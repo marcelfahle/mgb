@@ -20,7 +20,6 @@ const Section = styled.section`
 
 const Content = styled.div`
   color: white;
-  text-align: center;
   padding-top: 10%;
   h3 {
   }
@@ -31,6 +30,7 @@ const Content = styled.div`
 
 const Actions = styled.div`
   padding-top: 72px;
+  padding-left: 8%;
 `
 
 export default class Signup extends PureComponent {

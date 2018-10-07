@@ -46,7 +46,6 @@ const Header = styled.div`
   }
 `
 const Content = styled.div`
-  text-align: center;
   padding-top: 18px;
   padding-bottom: 147px;
 `

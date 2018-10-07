@@ -16,17 +16,18 @@ import menschenTitle from './../components/menschen/title.svg'
 const Wrapper = styled.div`
   background: #f8f8f8;
   text-align: center;
+  padding-bottom: 12%;
 `
 const Header = styled.div`
   position: relative;
 
   background-position: 25% 0%;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 100%;
-    padding-top: 52%;
-  }
+  // &:before {
+  //   display: block;
+  //   content: ' ';
+  //   width: 100%;
+  //   padding-top: 52%;
+  // }
   span {
     position: absolute;
     bottom: 27px;
@@ -45,13 +46,6 @@ const Content = styled.div`
     text-transform: uppercase;
     margin-top: 80px;
     margin-bottom: 46px;
-  }
-  > p {
-    color: #4d4d4d;
-
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
   }
 `
 

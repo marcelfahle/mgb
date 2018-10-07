@@ -58,7 +58,7 @@ export default class Person extends PureComponent {
   }
   render() {
     const { name, subjects, photo } = this.props
-    const bg = `/static/people/${photo || fallbackFemale}`
+    const bg = withPrefix(`people/${photo || fallbackFemale}`)
     return (
       <Element bg={bg}>
         <div className="content">

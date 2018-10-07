@@ -33,15 +33,10 @@ const Headline = styled.div`
 const Teaser = styled.div`
   position: relative;
 
-  p {
-    text-align: center;
-    max-width: 70%;
-    line-height: 1.51;
-    margin-left: auto;
-    margin-right: auto;
-  }
   p.actions {
+    padding-left: 8%;
     margin-top: 4em;
+    margin-bottom: 4em;
   }
 `
 

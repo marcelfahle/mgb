@@ -8,7 +8,7 @@ import { mq, rem } from './util'
 const Wrapper = styled.div`
   display: flex;
   color: #fff;
-  background-color: #4d4d4d;
+  background-color: #424649;
   height: 946px;
   padding-top: 32px;
   padding-bottom: 100px;
@@ -28,6 +28,7 @@ const Wrapper = styled.div`
 
 const LogoCol = styled.div`
   flex-basis: 31%;
+  padding-left: 4%;
 `
 const AddressCol = styled.div`
   flex-basis: 36%;
@@ -39,7 +40,7 @@ const SocialCol = styled.div`
 const SubNav = styled.ul`
   list-style: none;
   margin: 0;
-  padding: 60px 0;
+  padding: 0 0 60px 0;
   width: 72%;
   li {
     border-bottom: 1px solid white;
@@ -76,7 +77,8 @@ const FBLink = styled.a`
   }
 `
 const Logo = styled.img`
-  margin-left: 29%;
+  //margin-left: 29%;
+  margin-bottom: 20px;
   width: 51%;
   padding-top: 16px;
 `
@@ -87,10 +89,9 @@ export default class Footer extends PureComponent {
       <Wrapper>
         <LogoCol>
           <Logo src={footerlogo} />
-        </LogoCol>
-        <AddressCol>
           <p>© Städtisches Mädchengymnasium Borbeck</p>
-          <p>Fürstäbtissinstr. 52-54, 45355 Essen</p>
+          <p>Fürstäbtissinstr. 52-54</p>
+          <p>45355 Essen</p>
           <p>Tel 0201 68502-30</p>
           <p>
             <a href="mailto:Maedchengymnasium-Borbeck.info@schule.essen.de">
@@ -100,9 +101,23 @@ export default class Footer extends PureComponent {
           <p>
             <a href="/impressum">Impressum</a>
           </p>
+        </LogoCol>
+        <AddressCol>
           <SubNav>
             <li>
               <a href="#">SCHULE</a>
+            </li>
+            <li>
+              <a href="#">MädchenStärken</a>
+            </li>
+            <li>
+              <a href="#">Sprachen und Fahrten</a>
+            </li>
+            <li>
+              <a href="#">Mint</a>
+            </li>
+            <li>
+              <a href="#">Kultur</a>
             </li>
             <li>
               <a href="#">Menschen</a>
@@ -124,13 +139,14 @@ export default class Footer extends PureComponent {
         </AddressCol>
         <SocialCol>
           <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt%25C3%25A4dtisches-M%25C3%25A4dchengymnasium-Essen-Borbeck-174439166464921%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=185149931567279"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt%25C3%25A4dtisches-M%25C3%25A4dchengymnasium-Essen-Borbeck-174439166464921%2F&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=118833648248957"
             width="340"
-            height="500"
+            height="800"
             style={{ border: 'none', overflow: 'hidden' }}
             scrolling="no"
             frameBorder="0"
             allowtransparency="true"
+            allow="encrypted-media"
           />
         </SocialCol>
       </Wrapper>
