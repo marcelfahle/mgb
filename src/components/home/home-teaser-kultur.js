@@ -17,16 +17,9 @@ const Section = styled.section`
 `
 const Header = styled.div`
   position: relative;
-  background: transparent url(${bg}) no-repeat;
-  background-size: 102%;
-  background-position-x: -14px;
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+
   margin-top: -2.5%;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 100%;
-    padding-top: 43.6%;
-  }
 `
 const Content = styled.div`
   text-align: center;
@@ -49,6 +42,9 @@ export default class HomeTeaserKultur extends PureComponent {
     return (
       <Section>
         <Header>
+          <Video id="musikmenschen-video" autoPlay loop muted playsInline>
+            <source src={withPrefix('MGB-Kultur-Header.mp4')} />
+          </Video>
           <LayoverElement src={layover} />
         </Header>
         <Content>

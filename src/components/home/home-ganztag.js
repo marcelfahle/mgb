@@ -17,7 +17,7 @@ const Content = styled.div`
   position: relative;
   z-index: 120;
   padding-top: 50%;
-  padding-bottom: 67px;
+  padding-bottom: 12%;
   text-align: center;
   > div {
     top: -5%;
