@@ -13,7 +13,7 @@ const Section = styled.section`
     display: block;
     content: " ";
     width: 100%;
-    padding-top: 52.6%;
+    padding-top: 67%;
   }
 `
 

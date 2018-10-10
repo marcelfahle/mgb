@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { SubheadFullDark, PFullDark } from '../typo'
+import { FullWidthVideo } from '../FullWidthVideo'
 
 const Section = styled.section`
   position: relative;
@@ -9,13 +10,18 @@ const Section = styled.section`
   -webkit-clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 92%);
   clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 92%);
   z-index: 60;
-  margin-top: -9%;
+  margin-top: -12%;
   margin-right: -1px;
 `
 const Content = styled.div`
-  padding-top: 7vw;
+  position: relative;
+  z-index: 120;
+  padding-top: 50%;
   padding-bottom: 67px;
   text-align: center;
+  > div {
+    top: -5%;
+  }
   h3 {
     margin-top: 0;
     margin-bottom: 40px;
@@ -29,6 +35,7 @@ export default class HomeGanztag extends PureComponent {
     return (
       <Section>
         <Content>
+          <FullWidthVideo src="MGB-Schule-Mensa.mp4" />
           <SubheadFullDark>Ganztag / Mensa</SubheadFullDark>
           <PFullDark>
             Im offenen Ganztag können die Schülerinnen von 13:30 bis 14:30 in

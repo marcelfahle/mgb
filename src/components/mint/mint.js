@@ -28,14 +28,15 @@ const Section = styled.section`
 `
 const Header = styled.div`
   position: relative;
-  background: transparent url(${bg}) no-repeat;
+  //background: transparent url(${bg}) no-repeat;
   background-size: cover;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 100%;
-    padding-top: 52%;
-  }
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+  //&:before {
+  //  display: block;
+  //  content: ' ';
+  //  width: 100%;
+  //  padding-top: 52%;
+  //}
 `
 const Content = styled.div`
   text-align: center;
@@ -136,6 +137,9 @@ export default class MintHeader extends PureComponent {
     return (
       <Section>
         <Header>
+          <Video id="musikmenschen-video" autoPlay loop muted playsInline>
+            <source src={withPrefix('MGB-MINT-Header.mp4')} />
+          </Video>
           <LayoverElement src={layover} />
         </Header>
         <Content>

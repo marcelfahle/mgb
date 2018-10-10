@@ -27,6 +27,7 @@ import { LinkButton } from '../button'
 import menschenHeadline from './../menschen.svg'
 import PersonGrid from '../person-grid'
 import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { FullWidthVideo } from '../FullWidthVideo'
 
 import { kultur as kulturKollegen } from './../data'
 
@@ -190,21 +191,6 @@ const MenschenSubheadline = styled.h4`
   text-align: center;
   color: #4d4d4d;
 `
-
-const FullWidthVideoWrapper = styled.div`
-  position: absolute;
-  top: -5%;
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
-  > div {
-  }
-`
-const FullWidthVideo = ({ src, dir = 'ltd' }) => (
-  <FullWidthVideoWrapper>
-    <Video autoPlay loop muted playsInline>
-      <source src={withPrefix(src)} />
-    </Video>
-  </FullWidthVideoWrapper>
-)
 
 export default class KulturHeader extends PureComponent {
   render() {
