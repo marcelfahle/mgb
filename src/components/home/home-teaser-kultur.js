@@ -43,7 +43,7 @@ export default class HomeTeaserKultur extends PureComponent {
       <Section>
         <Header>
           <Video id="musikmenschen-video" autoPlay loop muted playsInline>
-            <source src={withPrefix('MGB-Kultur-Header.mp4')} />
+            <source src={withPrefix('MGB-Schule-KulturV1.mp4')} />
           </Video>
           <LayoverElement src={layover} />
         </Header>

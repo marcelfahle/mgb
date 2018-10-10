@@ -41,7 +41,7 @@ export default class HomeTeaserMint extends PureComponent {
       <Section>
         <Header>
           <Video id="musikmenschen-video" autoPlay loop muted playsInline>
-            <source src={withPrefix('MGB-MINT-Header.mp4')} />
+            <source src={withPrefix('MGB-Schule-MintV1.mp4')} />
           </Video>
           <LayoverElement src={layover} />
         </Header>
