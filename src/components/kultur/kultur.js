@@ -49,12 +49,12 @@ const Header = styled.div`
 const Content = styled.div`
   text-align: center;
   padding-top: 18px;
-  padding-bottom: 277px;
   position: relative;
   z-index: 50;
-  background-image: linear-gradient(to right, #ff8e00 0%, #ac005f 100%);
+  //background-image: linear-gradient(to right, #ff8e00 0%, #ac005f 100%);
+  //background: #ff8e00;
   color: white;
-  clip-path: polygon(0 0.4%, 100% 0, 100% 100%, 0 92%);
+  //clip-path: polygon(0 0.4%, 100% 0, 100% 100%, 0 92%);
   margin-top: -4%;
   &:before {
     display: block;
@@ -84,34 +84,37 @@ const Actions = styled.div`
 
 const LayoverElement = styled.img`
   position: absolute;
-  bottom: 28px;
+  bottom: -2px;
   right: 0px;
   width: 98%;
 `
 
 const Intro = styled.div`
   position: relative;
-  background: white;
-  color: #333333;
-  padding-top: 34%;
+  padding-top: 48%;
   margin-top: 80px;
-
+  background: #ff8e00;
+  & + ${Grid} + ${Actions}, & + ${Grid} {
+    background: #ff8e00;
+    margin-top: 0;
+    padding-top: 2%;
+  }
+  & + ${Grid} + ${Actions} {
+    padding-bottom: 77px;
+  }
   p {
     padding-bottom: 5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
-`
-const IntroImg = styled.img`
-  position: absolute;
-  top: -4%;
-  left: 0;
-  width: 100%;
 `
 
 const VocalNight = styled.div`
-  background: white;
+  background: #ff8e00;
   position: relative;
-  padding-top: 37%;
-  padding-bottom: 20%;
+  padding-top: 48%;
+  padding-bottom: 14%;
   z-index: 60;
   img {
     position: absolute;
@@ -123,33 +126,32 @@ const VocalNight = styled.div`
 const Theater = styled.div`
   position: relative;
   z-index: 70;
+  background: #d1422c;
+  padding-top: 28%;
 `
 const TheaterIntro = styled.div`
-  padding-top: 25%;
-  padding-bottom: 5%;
+  padding-top: 19%;
+  padding-bottom: 0;
   img {
     position: absolute;
     top: -13%;
     width: 100%;
   }
+`
+const TheaterBody = styled.div`
+  background: #d1422c;
+  padding-bottom: 5%;
 `
 
 const Kunst = styled.div`
   position: relative;
+  background: #a30154;
+  z-index: 90;
+  margin-bottom: -70px;
 `
 const KunstIntro = styled.div`
-  padding-top: 29%;
-  padding-bottom: 13%;
-  img {
-    position: absolute;
-    top: -13%;
-    width: 100%;
-  }
-`
-
-const TheaterBody = styled.div`
-  background: white;
-  padding-bottom: 10%;
+  padding-top: 50%;
+  padding-bottom: 20%;
 `
 
 const MenschenHeadlineWrapper = styled.div`
@@ -161,6 +163,7 @@ const MenschenHeadlineWrapper = styled.div`
     width: 90%;
   }
 `
+
 const MenschenHeadline = () => (
   <MenschenHeadlineWrapper>
     <img src={menschenHeadline} />
@@ -171,6 +174,7 @@ const Menschen = styled.div`
   min-height: 400px;
   background-image: linear-gradient(to right, #f8f8f8 0%, #f2f2f2 100%);
   padding-bottom: 100px;
+  z-index: 100;
   ${Actions} {
     text-align: center;
     padding-top: 96px;
@@ -186,6 +190,21 @@ const MenschenSubheadline = styled.h4`
   text-align: center;
   color: #4d4d4d;
 `
+
+const FullWidthVideoWrapper = styled.div`
+  position: absolute;
+  top: -5%;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+  > div {
+  }
+`
+const FullWidthVideo = ({ src, dir = 'ltd' }) => (
+  <FullWidthVideoWrapper>
+    <Video autoPlay loop muted playsInline>
+      <source src={withPrefix(src)} />
+    </Video>
+  </FullWidthVideoWrapper>
+)
 
 export default class KulturHeader extends PureComponent {
   render() {
@@ -207,9 +226,9 @@ export default class KulturHeader extends PureComponent {
           </PFullLight>
 
           <Intro>
-            <IntroImg src={introImg} />
-            <SubheadFullDark>Musik am MGB</SubheadFullDark>
-            <PFullDark>
+            <FullWidthVideo src="MGB-Kultur-HeaderV2.mp4" />
+            <SubheadFullLight>Musik am MGB</SubheadFullLight>
+            <PFullLight>
               Am MGB wird in Zusammenarbeit mit der Folkwang Musikschule die
               Musikklasse "Streichinstrumente“ angeboten. Alle Schülerinnen
               dieser Klasse lernen in den Jahrgangsstufen 5 und 6 ein
@@ -228,7 +247,7 @@ export default class KulturHeader extends PureComponent {
               musikalische Jahr am MGB auf aktive Weise mitgestalten, unsere
               Schule nach außen repräsentieren und Hunderte von Zuhörern in die
               Aula locken.
-            </PFullDark>
+            </PFullLight>
           </Intro>
 
           <Grid>
@@ -299,9 +318,9 @@ export default class KulturHeader extends PureComponent {
           </Actions>
         </Content>
         <VocalNight>
-          <img src={vocalNightImg} />
-          <SubheadFullDark>Girls' Vocal Night</SubheadFullDark>
-          <PFullDark>
+          <FullWidthVideo src="MGB-Kultur-Header3V2.mp4" />
+          <SubheadFullLight>Girls' Vocal Night</SubheadFullLight>
+          <PFullLight>
             Die Girls' Vocal Night, oder kurz GVN wie sie meistens genannt wird,
             ist ein Rock- und Popkonzert in der Aula des MGB, das zwischen
             Weihnachten und Ostern stattfindet.
@@ -313,11 +332,11 @@ export default class KulturHeader extends PureComponent {
             Die Bühne wird professionell beleuchtet und auch die live-Band
             besteht aus professionellen Musikern. Dadurch ist dieser Abend immer
             ein ganz besonderer und Karten sollte man sich frühzeitig sichern!
-          </PFullDark>
+          </PFullLight>
         </VocalNight>
         <Theater>
           <TheaterIntro>
-            <img src={theaterHeader} />
+            <FullWidthVideo src="MGB-Kultur-Header4V2.mp4" />
             <SubheadFullLight>Vorhang auf - Theater am MGB</SubheadFullLight>
             <PFullLight>
               Am Mädchengymnasium können Schülerinnen von der Klasse 5 bis zum
@@ -328,12 +347,25 @@ export default class KulturHeader extends PureComponent {
           <TheaterBody>
             <Grid>
               <Row>
-                <GridVideo className="v1">
-                  <img className="left-video" src={theater1} />
+                <GridVideo className="v2-special">
+                  <Video
+                    className="left-video-special"
+                    id="projektkurs-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source
+                      src={withPrefix(
+                        'MGB-Kachel-Kultur-AlsUnterrichtsfachV1.mp4'
+                      )}
+                    />
+                  </Video>
                 </GridVideo>
                 <GridItem className="g1">
-                  <SubheadDark>Als Unterrichtsfach</SubheadDark>
-                  <PDark>
+                  <SubheadLight>Als Unterrichtsfach</SubheadLight>
+                  <PLight>
                     Besonders ist dabei die Möglichkeit „Theater“ sogar als
                     Schulfach zu wählen. Im Wahlpflichtfach „Darstellendes
                     Spiel“ können unsere Mädchen in Klasse 8 & 9 die ganze
@@ -341,16 +373,27 @@ export default class KulturHeader extends PureComponent {
                     neben dem Spiel auf unserer Aulabühne - das Entstehen eines
                     Theatertextes im Schreiben eigener Szenen, Stimmtraining,
                     Rollenarbeit, Bühnentechnik,Theaterbesuche, uvm.
-                  </PDark>
+                  </PLight>
                 </GridItem>
               </Row>
               <Row>
                 <GridVideo className="v2-special">
-                  <img className="right-video-special" src={theater2} />
+                  <Video
+                    className="right-video-special"
+                    id="projektkurs-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source
+                      src={withPrefix('MGB-Kachel-Kultur-Als AGV1.mp4')}
+                    />
+                  </Video>
                 </GridVideo>
                 <GridItem className="g2" style={{ paddingTop: 40 }}>
-                  <SubheadDark>Als AG</SubheadDark>
-                  <PDark>
+                  <SubheadLight>Als AG</SubheadLight>
+                  <PLight>
                     Bereits ab Klasse 5 sehen wir unsere Schülerinnen in
                     Aufführungen der Theater-AG des offenen Ganztags auf der
                     Bühne. Für die Mittel- und Oberstufe gibt es eine gemeinsame
@@ -359,23 +402,23 @@ export default class KulturHeader extends PureComponent {
                     überzeugen, sondern auch den Sprung auf die Bühne des
                     Grillo-Theaters im Rahmen der Essener Schultheatertage
                     wagen.
-                  </PDark>
+                  </PLight>
                 </GridItem>
               </Row>
             </Grid>
-            <SubheadFullDark>Die grosse Bühne</SubheadFullDark>
-            <PFullDark>
+            <SubheadFullLight>Die grosse Bühne</SubheadFullLight>
+            <PFullLight>
               Durch die Kooperation mit dem Essener Grillo-Theater erhalten
               unsere Schülerinnen die Gelegenheit, auch hinter die Kulissen der
               großen Bühnen zu blicken, Probenprozesse zu begleiten oder sich
               ganz eigene Zugänge zu Stücken im Rahmen von Workshops zu
               erspielen.
-            </PFullDark>
+            </PFullLight>
           </TheaterBody>
         </Theater>
         <Kunst>
           <KunstIntro>
-            <img src={kunstHeader} />
+            <FullWidthVideo src="MGB-Kultur-Header5V2.mp4" />
             <SubheadFullLight>Kunst am MGB</SubheadFullLight>
             <PFullLight>
               Kunst am MGB geht weit über die bloße Anwendung solcher Techniken
