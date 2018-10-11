@@ -48,6 +48,7 @@ const P = css`
   font-family: 'Open Sans';
   font-size: ${rem(32)}rem;
   line-height: 1.37em;
+
   ${mq.greaterThan('huge')`
     font-size: ${rem(32)}rem;
   `};
@@ -77,7 +78,11 @@ export const PFullLight = styled.p`
 export const PFullDark = styled.p`
   ${P};
   ${FullP};
+
   color: #333;
+  a {
+    color: #4a90e2;
+  }
 `
 export const PLight = styled.p`
   ${P};
@@ -88,6 +93,9 @@ export const PDark = styled.p`
   ${P};
   ${RegularP};
   color: #333;
+  a {
+    color: #4a90e2;
+  }
 `
 
 export const PSmallFullLight = styled.p`
@@ -99,6 +107,9 @@ export const PSmallFullDark = styled.p`
   ${SmallP};
   ${FullP};
   color: #333;
+  a {
+    color: #4a90e2;
+  }
 `
 export const PSmallFullMedium = styled.p`
   ${SmallP};
@@ -107,6 +118,9 @@ export const PSmallFullMedium = styled.p`
   strong {
     font-weight: 700;
     text-transform: uppercase;
+  }
+  a {
+    color: #4a90e2;
   }
 `
 export const PSmallLight = styled.p`
@@ -121,5 +135,8 @@ export const PSmallMedium = styled.p`
   strong {
     font-weight: 700;
     text-transform: uppercase;
+  }
+  a {
+    color: #4a90e2;
   }
 `
