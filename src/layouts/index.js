@@ -80,7 +80,7 @@ const Layout = ({ children }) => (
             { name: 'keywords', content: 'sample, something' },
             {
               name: 'viewport',
-              content: 'width=device-width, initual-scale=1',
+              content: 'width=device-width, initial-scale=1',
             },
           ]}
         />
