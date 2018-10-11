@@ -30,8 +30,8 @@ const Header = styled.div`
   // }
   span {
     position: absolute;
-    bottom: 27px;
-    right: -2px;
+    bottom: -6px;
+    right: 0px;
     text-align: right;
     img {
       width: 93%;
