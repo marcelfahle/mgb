@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import Button from './button'
+import { LinkButton } from './button'
 import { SubheadFullLight, PFullLight } from './typo'
 
 const Section = styled.section`
@@ -47,7 +47,9 @@ export default class Signup extends PureComponent {
             Anmeldung Ihrer Tochter benötigen. Wir freuen uns auf Sie.
           </PFullLight>
           <Actions>
-            <Button secondary>Mehr erfahren</Button>
+            <LinkButton to="/anmeldung" secondary>
+              Mehr erfahren
+            </LinkButton>
           </Actions>
         </Content>
       </Section>

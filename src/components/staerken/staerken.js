@@ -8,6 +8,7 @@ import grid_images from './../mint-images.png'
 import maskMathematik from './../assets/mask-mathematik.svg'
 import Button, { LinkButton } from '../button'
 import { PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import { Video } from '../VideoGrid'
 import { mq, rem } from '../util'
 
 import menschenHeadline from './../menschen.svg'
@@ -21,7 +22,6 @@ const Section = styled.section`
 `
 const Header = styled.div`
   position: relative;
-  background: transparent url(${bg}) no-repeat;
   color: #ffffff;
   font-family: 'Open Sans';
   font-size: 128px;
@@ -30,12 +30,7 @@ const Header = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 1px;
-    padding-top: 50%;
-  }
+
   span {
     position: absolute;
     bottom: -24px;
@@ -55,6 +50,9 @@ export default class MintHeader extends PureComponent {
     return (
       <Section>
         <Header>
+          <Video id="musikmenschen-video" autoPlay loop muted playsInline>
+            <source src={withPrefix('MGB-Maedchenstaerken-HeaderV1.mp4')} />
+          </Video>
           <span>MÄDCHENSTÄRKEN</span>
         </Header>
         <Content>

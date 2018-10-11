@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import fblogo from './assets/fb-logo.svg'
 import footerlogo from './assets/footer-logo.svg'
@@ -99,37 +100,37 @@ export default class Footer extends PureComponent {
             </a>
           </p>
           <p>
-            <a href="/impressum">Impressum</a>
+            <Link to="/impressum">Impressum</Link>
           </p>
         </LogoCol>
         <AddressCol>
           <SubNav>
             <li>
-              <a href="#">SCHULE</a>
+              <Link to="/">SCHULE</Link>
             </li>
             <li>
-              <a href="#">MädchenStärken</a>
+              <Link to="/maedchenstaerken">MädchenStärken</Link>
             </li>
             <li>
-              <a href="#">Sprachen und Fahrten</a>
+              <Link to="/sprachen">Sprachen und Fahrten</Link>
             </li>
             <li>
-              <a href="#">Mint</a>
+              <Link to="/mint">Mint</Link>
             </li>
             <li>
-              <a href="#">Kultur</a>
+              <Link to="/kultur">Kultur</Link>
             </li>
             <li>
-              <a href="#">Menschen</a>
+              <Link to="/menschen">Menschen</Link>
             </li>
             <li>
-              <a href="#">Anmeldung</a>
+              <Link to="/anmeldung">Anmeldung</Link>
             </li>
             <li>
-              <a href="#">Kalendar</a>
+              <Link to="/kalendar">Kalendar</Link>
             </li>
             <li>
-              <a href="#">Downloads</a>
+              <Link to="/downloads">Downloads</Link>
             </li>
           </SubNav>
           <FBLink href="" target="_blank">

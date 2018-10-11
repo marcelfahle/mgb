@@ -40,6 +40,7 @@ const Header = styled.div`
   //background: transparent url(${bg}) no-repeat;
   //background-size: 105%;
   background-position: 25% 0%;
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
   //&:before {
   //  display: block;
   //  content: ' ';
