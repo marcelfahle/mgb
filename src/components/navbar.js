@@ -113,17 +113,17 @@ const Navbar = props => (
           </Link>
         </NavImageItem>
         <NavItem>
-          <NavLink to="#" activeClassName="active">
+          <NavLink to="/kalendar" activeClassName="active">
             KALENDER
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="#" activeClassName="active">
+          <NavLink to="/downloads" activeClassName="active">
             DOWNLOADS
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="#" activeClassName="active">
+          <NavLink to="/impressum" activeClassName="active">
             IMPRESSUM
           </NavLink>
         </NavItem>
