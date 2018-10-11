@@ -32,7 +32,7 @@ const Actions = styled.div`
 `
 const LayoverElement = styled.img`
   position: absolute;
-  bottom: 0px;
+  bottom: -6px;
   right: -10px;
   width: 96%;
 `
