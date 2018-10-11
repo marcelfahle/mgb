@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import { Location } from '@reach/router'
 
 import logo from './mgb-logo.svg'
 
@@ -54,13 +55,6 @@ const NavItem = styled.li`
 
   ${mq.greaterThan('large')`
     //padding-bottom: 56px;
-  `} ${({ current }) =>
-    current &&
-    `
-      border-bottom: 5px solid #da121a;
-      a {
-        color: #da121a;
-      }
   `};
 `
 const NavImageItem = styled.li`
@@ -85,37 +79,53 @@ const NavLink = styled(Link)`
   display: table-cell;
   vertical-align: middle;
   &:hover,
-  &:active {
+  &:active,
+  &.active {
     color: #da121a;
+  }
+  &.active {
+    border-bottom: 5px solid #da121a;
   }
 `
 
-const Navbar = ({ siteTitle }) => (
-  <Wrapper>
+const Navbar = props => (
+  <Wrapper {...props}>
     <Inner>
       <NavList>
         <NavItem current>
-          <NavLink to="/">SCHULE</NavLink>
+          <NavLink to="/" activeClassName="active">
+            SCHULE
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/menschen">MENSCHEN</NavLink>
+          <NavLink to="/menschen" activeClassName="active">
+            MENSCHEN
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="#">ANMELDUNG</NavLink>
+          <NavLink to="/anmeldung" activeClassName="active">
+            ANMELDUNG
+          </NavLink>
         </NavItem>
         <NavImageItem>
           <Link to="/">
-            <Logo src={logo} alt={siteTitle} title={siteTitle} />
+            <Logo src={logo} alt={props.siteTitle} title={props.siteTitle} />
           </Link>
         </NavImageItem>
         <NavItem>
-          <NavLink to="#">KALENDER</NavLink>
+          <NavLink to="#" activeClassName="active">
+            KALENDER
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="#">DOWNLOADS</NavLink>
+          <NavLink to="#" activeClassName="active">
+            DOWNLOADS
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="#">IMPRESSUM</NavLink>
+          <NavLink to="#" activeClassName="active">
+            IMPRESSUM
+          </NavLink>
         </NavItem>
       </NavList>
     </Inner>

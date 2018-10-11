@@ -62,7 +62,7 @@ export const GridVideo = styled.div`
 
 export const Video = styled.video`
   width: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 
   //&.left-video {
   //  clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
