@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 import { generateMedia } from 'styled-media-query'
 
 export const mq = generateMedia({
-  veryhuge: '1920px',
+  veryhuge: '1680px',
   huge: '1440px',
   large: '1280px',
   medium: '1024px',
