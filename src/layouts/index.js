@@ -25,7 +25,7 @@ injectGlobal`
     ${mq.greaterThan('huge')`
     `}
     ${mq.greaterThan('veryhuge')`
-      font-size: 16px;
+			//font-size: 16px;
     `}
   }
 
