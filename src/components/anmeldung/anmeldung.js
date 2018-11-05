@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { withPrefix } from 'gatsby-link'
+import moment from 'moment'
+import { extendMoment } from 'moment-range'
 
+import Event from './../kalender/event'
+import { Calender } from './../kalender/kalender'
 import Button, { LinkButton } from '../button'
-import { PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import { TypoDiv, PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
 import { Video } from '../VideoGrid'
 import { mq, rem } from '../util'
 
@@ -34,11 +38,14 @@ const Header = styled.div`
   }
   span {
     position: absolute;
-    bottom: -24px;
+    bottom: -26px;
     left: -18px;
     font-size: 11rem;
     font-weight: 700;
     text-transform: uppercase;
+    ${mq.greaterThan('veryhuge')`
+			bottom: -36px;
+		`};
   }
 `
 const Content = styled.div`
@@ -46,8 +53,24 @@ const Content = styled.div`
   padding-bottom: 147px;
 `
 
+const Events = styled.ul`
+  padding: 0;
+`
+
 export default class Anmeldung extends PureComponent {
+  getMonth = d => d.toLocaleString('de-de', { month: 'long' })
+
+  getDay = d => new Date(d).toLocaleString('de-de', { day: '2-digit' })
+
+  getKey = (d, t) => `${d.replace(/\s/g, '')}-${t.replace(/\s/g, '')}`
+
+  formatDate = (s, e) => {
+    const start = new Date(s).toLocaleDateString('de-de')
+    const end = e ? ` - ${new Date(e).toLocaleDateString('de-de')}` : ''
+    return `${start}${end}`
+  }
   render() {
+    const { data } = this.props
     return (
       <Section>
         <Header>
@@ -61,23 +84,32 @@ export default class Anmeldung extends PureComponent {
             Zu den Anmeldungetagen freuen wir uns, Sie und Ihre Tochter bei uns
             zu begrüßen.
           </SubheadMedium>
-          <SubheadMedium>Termine Im Schuljahr 2018/19</SubheadMedium>
           <PSmallFullMedium>
-            Donnerstag, 07.03.2019 - Samstag, 09.03.2019, jeweils 9.00 - 12.00
-            Uhr
-            <br />
-            <br />
-            Sollte Sie vorher eine Beratung zur möglichen Aufnahme Ihrer Tochter
-            benötigen (z.B. mit eingeschränkter Empfehlung der Grundschule), so
-            stehen Ihnen unsere Schulleiterin Frau Jutta Reimann und unsere
-            Erprobungsstufenkoordinatorin Frau Antje Bock gerne zur Verfügung.
-            Gemeinsam mit Ihrer Tochter sprechen wir über die Möglichkeiten und
-            Förderung an unserer Schule. Melden Sie sich hierzu bitte bei
-            unserem Sekretariat bei Fr. Busch. Sie leitet Ihre Anfrage dann
-            weiter. (0201 88480710)
+            <strong>
+              Informationsveranstaltungen für Grundschuleltern  und
+              Grundschülerinnen Schuljahr 2019/20
+            </strong>
           </PSmallFullMedium>
+          <Calender>
+            <Events>
+              {data.map(d => {
+                return (
+                  <Event
+                    key={this.getKey(d.node.startDate, d.node.title)}
+                    day={this.getDay(d.node.startDate)}
+                    date={this.formatDate(d.node.startDate, d.node.endDate)}
+                    title={d.node.title}
+                    description={
+                      d.node.descriptionNode.childMarkdownRemark.html
+                    }
+                  />
+                )
+              })}
+            </Events>
+          </Calender>
+
           <SubheadMedium>Zur Anmeldung benötigen wir:</SubheadMedium>
-          <PSmallFullMedium>
+          <TypoDiv>
             <ul>
               <li>
                 Beide Eltern oder die Erziehungsberechtigten mit Ihrer Tochter
@@ -108,7 +140,7 @@ export default class Anmeldung extends PureComponent {
             <br />
             Die genannten Unterlagen müssen vollständig sein, sonst kann Ihre
             Tochter nicht aufgenommen werden.
-          </PSmallFullMedium>
+          </TypoDiv>
         </Content>
       </Section>
     )

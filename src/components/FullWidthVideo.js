@@ -6,6 +6,7 @@ import { Video } from './VideoGrid'
 const FullWidthVideoWrapper = styled.div`
   position: absolute;
   top: -5%;
+  width: 100%;
   clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
   > div {
   }

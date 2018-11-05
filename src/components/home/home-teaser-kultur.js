@@ -8,12 +8,16 @@ import layover from './../assets/layover-kultur.svg'
 import { LinkButton } from '../button'
 import { SubheadFullLight, PFullLight, SubheadLight, PLight } from '../typo'
 import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { mq, rem } from './../util'
 
 const Section = styled.section`
   position: relative;
   background-image: linear-gradient(to right, #ff8e00 0%, #ac005f 100%);
   padding-top: 1px;
-  padding-bottom: 140px;
+  padding-bottom: 15%;
+  ${mq.greaterThan('veryhuge')`
+
+	`};
 `
 const Header = styled.div`
   position: relative;

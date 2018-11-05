@@ -20,9 +20,13 @@ const Section = styled.section`
 const Content = styled.div`
   position: absolute;
   top: 30%;
-  left: 8%;
+  left: 5%;
   right: 0;
   //bottom: 0;
+
+  ${mq.greaterThan('large')`
+		left: 8%;
+	`};
 `
 
 const Title = styled.h1`
@@ -36,13 +40,12 @@ const Subline = styled.h2`
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 0 30px -12px;
+  margin: 0 0 14px -5px;
   line-height: 0.95em;
   letter-spacing: -3px;
   font-size: ${rem(83)}rem;
   ${mq.greaterThan('medium')`
     font-size: ${rem(103)}rem;
-    margin: 0 0 14px -5px;
 
   `};
   ${mq.greaterThan('large')`
@@ -51,13 +54,13 @@ const Subline = styled.h2`
   `};
   ${mq.greaterThan('huge')`
     font-size: ${rem(123)}rem;
-  margin: 0 0 30px -12px;
+		margin: 0 0 30px -12px;
 
   `};
-  //${mq.greaterThan('veryhuge')`
-  //  font-size: ${rem(183)}rem;
+  ${mq.greaterThan('veryhuge')`
+    font-size: ${rem(183)}rem;
 
-  //`};
+  `};
 `
 const Video = styled.video`
   position: absolute;

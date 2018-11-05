@@ -40,12 +40,15 @@ const Headline = styled.h2`
   margin: 0;
   font-weight: 700;
   margin-bottom: 0.2em;
-  padding-left: 8%;
+  padding-left: 5%;
   font-size: ${rem(78)}rem;
   ${mq.greaterThan('medium')`
     font-size: ${rem(88)}rem;
     margin-left: -5px;
   `};
+  ${mq.greaterThan('large')`
+		padding-left: 8%;
+	`};
 
   //${mq.greaterThan('veryhuge')`
   //  font-size: ${rem(128)}rem;
@@ -54,17 +57,22 @@ const Headline = styled.h2`
 `
 const Subline = styled.h3`
   margin: 0;
-  padding-left: 8%;
   font-size: ${rem(34)}rem;
   font-weight: 700;
-  ${mq.greaterThan('medium')`
-  font-size: ${rem(40)}rem;
-`};
 
-  //${mq.greaterThan('veryhuge')`
-  //  font-size: ${rem(50)}rem;
-  //`};
+  padding-left: 5%;
+  ${mq.greaterThan('medium')`
+		font-size: ${rem(40)}rem;
+	`};
+
+  ${mq.greaterThan('large')`
+		padding-left: 8%;
+	`};
 `
+
+//${mq.greaterThan('veryhuge')`
+//  font-size: ${rem(50)}rem;
+//`};
 const Text = styled(PLight)`
   max-width: 64%;
   margin-top: 1.2em;

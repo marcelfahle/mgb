@@ -2,13 +2,15 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { SubheadFullDark, PFullDark } from '../typo'
 import { FullWidthVideo } from '../FullWidthVideo'
+import { mq } from '../util'
 
 const Section = styled.section`
   position: relative;
   background: white;
   padding-top: 1px;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 92%);
-  clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 92%);
+
+  clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 97%);
+
   z-index: 60;
   margin-top: -12%;
   margin-right: -1px;

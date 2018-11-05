@@ -35,7 +35,7 @@ const Header = styled.div`
   );
   span {
     position: absolute;
-    bottom: -24px;
+    bottom: -26px;
     left: -18px;
     font-size: 11rem;
     font-weight: 700;

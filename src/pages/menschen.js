@@ -63,14 +63,6 @@ export default class Menschen extends PureComponent {
             </span>
           </Header>
           <Content>
-            <SubheadFullDark>im Lehrerportrait</SubheadFullDark>
-            <PFullDark>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat.
-            </PFullDark>
             <SubheadFullDark>Schulleitung</SubheadFullDark>
             <PersonGrid people={schulleitung} />
             <SubheadFullDark>Kollegium</SubheadFullDark>

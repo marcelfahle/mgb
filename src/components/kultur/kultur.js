@@ -11,6 +11,10 @@ import {
   PLight,
   PFullLight,
   PFullDark,
+  Menschen,
+  MenschenSubheadline,
+  MenschenHeadlineWrapper,
+  MenschenHeadline,
 } from '../typo'
 
 import bg from './../headers/header-kultur.png'
@@ -94,7 +98,7 @@ const LayoverElement = styled.img`
 const Intro = styled.div`
   position: relative;
   padding-top: 48%;
-  margin-top: 80px;
+  margin-top: 6%;
   background: #ff8e00;
   & + ${Grid} + ${Actions}, & + ${Grid} {
     background: #ff8e00;
@@ -154,43 +158,6 @@ const Kunst = styled.div`
 const KunstIntro = styled.div`
   padding-top: 50%;
   padding-bottom: 20%;
-`
-
-const MenschenHeadlineWrapper = styled.div`
-  position: absolute;
-  right: -1px;
-  top: -140px;
-  text-align: right;
-  img {
-    width: 90%;
-  }
-`
-
-const MenschenHeadline = () => (
-  <MenschenHeadlineWrapper>
-    <img src={menschenHeadline} />
-  </MenschenHeadlineWrapper>
-)
-const Menschen = styled.div`
-  position: relative;
-  min-height: 400px;
-  background-image: linear-gradient(to right, #f8f8f8 0%, #f2f2f2 100%);
-  padding-bottom: 100px;
-  z-index: 100;
-  ${Actions} {
-    text-align: center;
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-`
-const MenschenSubheadline = styled.h4`
-  font-size: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-top: 100px;
-  padding-bottom: 86px;
-  text-align: center;
-  color: #4d4d4d;
 `
 
 export default class KulturHeader extends PureComponent {
@@ -423,7 +390,7 @@ export default class KulturHeader extends PureComponent {
             Die Menschen hinter der Kultur
           </MenschenSubheadline>
           <PersonGrid people={kulturKollegen} />
-          <Actions>
+          <Actions className="actions">
             <LinkButton to="/menschen" primary>
               Alle kennenlernen
             </LinkButton>

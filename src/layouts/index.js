@@ -11,7 +11,7 @@ import Footer from '../components/footer'
 import { mq, WrapperPadding } from '../components/util'
 
 const theme = {
-  maxWidth: '1600px',
+  maxWidth: '1980px',
 }
 
 injectGlobal`
@@ -19,15 +19,14 @@ injectGlobal`
     //font-size: 10px;
     box-sizing: border-box;
     font-size: 11px;
-    //${mq.greaterThan('medium')`
-    //  font-size: 12px;
-    //`}
-    //${mq.greaterThan('huge')`
-    //  font-size: 14px;
-    //`}
-    //${mq.greaterThan('veryhuge')`
-    //  font-size: 16px;
-    //`}
+    ${mq.greaterThan('medium')`
+      font-size: 12px;
+    `}
+    ${mq.greaterThan('huge')`
+    `}
+    ${mq.greaterThan('veryhuge')`
+      font-size: 16px;
+    `}
   }
 
   *, *:before, *:after {
@@ -44,17 +43,20 @@ injectGlobal`
 `
 
 const Outer = styled.div`
-  width: 1366px;
+  //width: 1366px;
+  max-width: 1980px;
   margin-left: auto;
   margin-right: auto;
+  ${WrapperPadding};
+  position: relative;
+  min-width: 960px;
+  overflow: hidden;
 `
 
 const Wrapper = styled.div`
   margin: 0px auto;
   max-width: ${props => props.theme.maxWidth};
-  min-width: 984px;
   overflow: hidden;
-  ${WrapperPadding};
   section {
     overflow: hidden;
   }

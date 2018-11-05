@@ -11,15 +11,16 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 1000;
   top: 33px;
+	left: 0px;
   height: 92px;
   position: absolute;
   max-width: ${props => props.theme.maxWidth};
 
   color: #808080;
-  ${WrapperPadding};
   //min-width: 984px;
-  //width: 100%;
-  width: 1366px;
+  width: 100%;
+	${WrapperPadding}
+  //width: 1366px;
   ${mq.greaterThan('large')`
     height: 126px;
   `};
@@ -45,6 +46,7 @@ const NavList = styled.ul`
   list-style: none;
   margin: 0;
   //padding: 0 10%;
+  max-width: 1280px;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -113,7 +115,7 @@ const Navbar = props => (
           </Link>
         </NavImageItem>
         <NavItem>
-          <NavLink to="/kalendar" activeClassName="active">
+          <NavLink to="/kalender" activeClassName="active">
             KALENDER
           </NavLink>
         </NavItem>

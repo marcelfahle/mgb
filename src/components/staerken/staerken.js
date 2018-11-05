@@ -33,11 +33,23 @@ const Header = styled.div`
 
   span {
     position: absolute;
-    bottom: -24px;
     left: -18px;
-    font-size: 11rem;
+    bottom: -18px;
+    font-size: 8rem;
     font-weight: 700;
     text-transform: uppercase;
+
+    ${mq.greaterThan('large')`
+			bottom: -26px;
+			font-size: 10rem;
+		`};
+    ${mq.greaterThan('huge')`
+			font-size: 9rem;
+		`};
+    ${mq.greaterThan('veryhuge')`
+			font-size: 11rem;
+			bottom: -36px;
+		`};
   }
 `
 const Content = styled.div`

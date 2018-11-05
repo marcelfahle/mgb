@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: 946px;
   padding-top: 32px;
   padding-bottom: 100px;
-  font-size: 20px;
+  font-size: ${rem(24)}rem;
   p a,
   p a:link,
   p a:visited {
@@ -29,20 +29,32 @@ const Wrapper = styled.div`
 
 const LogoCol = styled.div`
   flex-basis: 31%;
-  padding-left: 4%;
+  padding-left: 20px;
+  padding-right: 20px;
+  ${mq.greaterThan('large')`
+		padding-left: 40px;
+		padding-right: 40px;
+	`};
 `
 const AddressCol = styled.div`
   flex-basis: 36%;
 `
 const SocialCol = styled.div`
+  display: flex;
+  justify-content: flex-end;
   flex: 1;
+  padding-right: 20px;
+
+  ${mq.greaterThan('large')`
+		padding-right: 40px;
+	`};
 `
 
 const SubNav = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0 0 60px 0;
-  width: 72%;
+  width: 90%;
   li {
     border-bottom: 1px solid white;
     text-transform: uppercase;
@@ -64,7 +76,10 @@ const SubNav = styled.ul`
 const FBLink = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  line-height: 90px;
+  line-height: 40px;
+	${mq.greaterThan('huge')`
+		line-height: 90px;
+	`}
   color: white;
   &:link,
   &:visited,
@@ -74,7 +89,21 @@ const FBLink = styled.a`
   }
   img {
     vertical-align: bottom;
-    margin-right: 27px;
+		width: 40px;
+		
+    margin-right: 10px;
+    ${mq.greaterThan('medium')`
+
+    `}
+    ${mq.greaterThan('large')`
+			width: 60px;
+			margin-right: 15px;
+    `}
+    ${mq.greaterThan('veryhuge')`
+			width: 90px;
+			margin-right: 27px;
+
+    `}
   }
 `
 const Logo = styled.img`
@@ -127,7 +156,7 @@ export default class Footer extends PureComponent {
               <Link to="/anmeldung">Anmeldung</Link>
             </li>
             <li>
-              <Link to="/kalendar">Kalendar</Link>
+              <Link to="/kalender">Kalender</Link>
             </li>
             <li>
               <Link to="/downloads">Downloads</Link>

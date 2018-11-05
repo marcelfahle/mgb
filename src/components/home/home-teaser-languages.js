@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import bg from './../teaser-languages.png'
 import { LinkButton } from '../button'
-import { rem } from './../util'
+import { rem, mq } from './../util'
 import { PFullDark } from '../typo'
 
 const Section = styled.section`
@@ -25,18 +25,27 @@ const Header = styled.div`
 const Headline = styled.div`
   position: absolute;
   top: 16%;
-  left: 8%;
+  left: 5%;
   color: white;
   font-size: ${rem(128)}rem;
   font-weight: 700;
+
+  ${mq.greaterThan('large')`
+		left: 8%;
+	`};
 `
 const Teaser = styled.div`
   position: relative;
 
   p.actions {
-    padding-left: 8%;
+    padding-left: 5%;
     margin-top: 4em;
     margin-bottom: 4em;
+
+    ${mq.greaterThan('large')`
+    padding-left: 8%;
+
+	`};
   }
 `
 

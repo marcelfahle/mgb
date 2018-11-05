@@ -7,15 +7,16 @@ import { mq, rem } from './util'
 const Style = css`
   color: #fff;
 
+  font-size: ${rem(24)}rem;
   font-weight: 600;
-  padding: 6px 30px 12px 30px;
+  padding: 6px 30px 10px 30px;
   border-radius: 4px;
   letter-spacing: -0.5px;
   background-color: #da121a;
   border: none;
   ${mq.greaterThan('medium')`
     font-size: ${rem(24)}rem;
-  border-radius: 6px;
+		border-radius: 6px;
 
   `};
   ${mq.greaterThan('large')`

@@ -31,7 +31,6 @@ const Header = styled.div`
   background-size: cover;
   color: #ffffff;
   font-family: 'Open Sans';
-  font-size: ${rem(128)}rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -43,11 +42,23 @@ const Header = styled.div`
     width: 1px;
     padding-top: 50%;
   }
+
+  padding-top: ${rem(64)}rem;
+  font-size: ${rem(80)}rem;
+  ${mq.greaterThan('large')`
+		font-size: ${rem(128)}rem;
+	`};
+  ${mq.greaterThan('huge')`
+
+	`};
+  ${mq.greaterThan('veryhuge')`
+
+	`};
 `
 const Content = styled.div`
   text-align: center;
   padding-top: 18px;
-  padding-bottom: 147px;
+  padding-bottom: 2%;
 `
 const Headline = styled.h3`
   color: #ffffff;
@@ -76,11 +87,11 @@ position: relative;
 `
 
 const GridItem = styled.div`
-  max-width: 44%;
+  max-width: 50%;
   text-align: left;
   &.grid1,
   &.grid3 {
-    margin-right: 70px;
+    margin-right: 2%;
     margin-left: auto;
   }
   &.grid2,
@@ -89,7 +100,7 @@ const GridItem = styled.div`
     margin-right: auto;
   }
   &.grid1 {
-    padding-top: 54px;
+    padding-top: 2%;
   }
   &.grid2 {
     margin-top: 14%;
@@ -175,16 +186,16 @@ const Block = styled.div`
   display: block;
   margin-top: 4%;
   &.russian {
-    margin-top: -6%;
+    margin-top: 0;
   }
 `
 
 const Head = styled.div`
   position: relative;
   background: transparent url(${russiaImg}) no-repeat;
+  background-size: cover;
   color: #ffffff;
   font-family: 'Open Sans';
-  font-size: 128px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -196,15 +207,29 @@ const Head = styled.div`
     width: 1px;
     padding-top: 40%;
   }
+
+  font-size: ${rem(58)}rem;
+  line-height: 1.64em;
+  ${mq.greaterThan('large')`
+		font-size: ${rem(128)}rem;
+
+	`};
+  ${mq.greaterThan('huge')`
+
+	`};
+  ${mq.greaterThan('veryhuge')`
+
+	`};
 `
 const Logos = styled.img`
   margin: 0 auto;
+  width: 50%;
 `
 
 const MenschenHeadlineWrapper = styled.div`
   position: absolute;
   right: -1px;
-  top: -140px;
+  top: -5.5%;
   text-align: right;
   img {
     width: 90%;
@@ -227,13 +252,18 @@ const Menschen = styled.div`
   }
 `
 const MenschenSubheadline = styled.h4`
-  font-size: 50px;
+  font-size: ${rem(50)}rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding-top: 100px;
-  padding-bottom: 86px;
-  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 3%;
   color: #4d4d4d;
+  text-align: left;
+  padding-left: 5%;
+
+  ${mq.greaterThan('large')`
+		padding-left: 8%;
+	`};
 `
 
 export default class MintHeader extends PureComponent {
@@ -318,7 +348,7 @@ export default class MintHeader extends PureComponent {
             <Logos src={logosImg} />
           </Block>
           <Block>
-            <img src={usaImg} />
+            <img src={usaImg} width="100%" />
             <SubheadMedium>Amerikafahrt</SubheadMedium>
             <PSmallFullMedium>
               In Kooperation mit dem Kölner Anbieter EEI bietet sich
@@ -341,10 +371,10 @@ export default class MintHeader extends PureComponent {
               verglichen werden. In jedem Jahr werden unendlich viele Eindrücke
               mit nach Hause genommen und viele neue Freundschaften geschlossen.
             </PSmallFullMedium>
-            <SubheadMedium>Ansprechpartner</SubheadMedium>
+            {/*<SubheadMedium>Ansprechpartner</SubheadMedium>*/}
           </Block>
           <Block>
-            <img src={londonImg} />
+            <img src={londonImg} width="100%" />
             <SubheadMedium>
               Klassenfahrten der Jahrgangsstufe 9 nach England
             </SubheadMedium>
@@ -380,7 +410,7 @@ export default class MintHeader extends PureComponent {
         <Menschen>
           <MenschenHeadline />
           <MenschenSubheadline>
-            Die Menschen hinter der Kultur
+            Die Menschen hinter den Sprachen
           </MenschenSubheadline>
           <PersonGrid people={kulturKollegen} />
           <Actions>

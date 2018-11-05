@@ -20,6 +20,10 @@ import {
   PFullDark,
   SubheadLight,
   PLight,
+  Menschen,
+  MenschenSubheadline,
+  MenschenHeadlineWrapper,
+  MenschenHeadline,
 } from '../typo'
 
 const Section = styled.section`
@@ -87,40 +91,6 @@ const RobertaImg = styled.img`
   width: 100%;
 `
 
-const MenschenHeadlineWrapper = styled.div`
-  position: absolute;
-  right: -1px;
-  top: -140px;
-  text-align: right;
-  img {
-    width: 90%;
-  }
-`
-const MenschenHeadline = () => (
-  <MenschenHeadlineWrapper>
-    <img src={menschenHeadline} />
-  </MenschenHeadlineWrapper>
-)
-const Menschen = styled.div`
-  position: relative;
-  min-height: 400px;
-  background-image: linear-gradient(to right, #f8f8f8 0%, #f2f2f2 100%);
-  padding-bottom: 100px;
-  ${Actions} {
-    text-align: center;
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-`
-const MenschenSubheadline = styled.h4`
-  font-size: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding-top: 100px;
-  padding-bottom: 86px;
-  text-align: center;
-  color: #4d4d4d;
-`
 const FullVideo = styled.div`
   clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
   height: 442px;
@@ -153,7 +123,7 @@ export default class MintHeader extends PureComponent {
             vorrangig eine Männerdomäne waren.
             <br />
             <br />
-            Wettbewerbe und Projekte rund um diese Themen, fördern den Spaß, die
+            Wettbewerbe und Projekte rund um diese Themen, fördern den Spaß, die
             Kreativität und schaffen Freiraum für Innovationen.
           </PFullLight>
 
@@ -174,12 +144,15 @@ export default class MintHeader extends PureComponent {
               <GridItem className="g1">
                 <SubheadLight>Mathematik</SubheadLight>
                 <PLight>
-                  Mathematik am MGB bedeutet, die wesentlichen Eigenschaften der
-                  Mathematik wie Struktur, Wahrheit, Schönheit kennen lernen zu
-                  können.
+                  Strategisches Vorgehen und Vertiefen mathematischer
+                  Grundkenntnisse nach dem Spiralprinzip im Unterricht und
+                  Förderunterricht erlernen, beides ist im Stundenplan
+                  integriert. Technisches Hilfsmittel ist ein grafikfähiger
+                  Taschenrechner ab Klasse 9.
                   <br />
-                  Es ist nicht nur ein Unterrichtsfach, wir nehmen auch an
-                  überregionalen Wettbewerben teil.
+                  Wettbewerbe: 6 überregionale Wettbewerbe im Jahr, in denen,
+                  wer teilnimmt, verstärkt Strategien entwickeln und Ideen
+                  geschickt einbringen muss.
                 </PLight>
               </GridItem>
             </Row>
@@ -226,8 +199,10 @@ export default class MintHeader extends PureComponent {
                 <PLight>
                   Neugierig sein - Fragen zu Phänomenen in der Natur zu stellen,
                   sie zu beobachten, zu untersuchen und zu experimentieren – das
-                  steht im Mittelpunkt des naturwissenschaft-lichen Unterrichts
-                  am Mädchengymnasium.
+                  steht im Mittelpunkt des naturwissenschaftlichen Unterrichts
+                  am Mädchengymnasium. An unserer Schule werden die Fächer
+                  Chemie, Biologie und Physik in der 5. und 6. Klasse integriert
+                  im Fach Naturwissenschaften unterrichtet.
                 </PLight>
               </GridItem>
             </Row>
@@ -267,12 +242,64 @@ export default class MintHeader extends PureComponent {
               verschiedenen Mathematikwettbewerben im Jahr an unserer Schule an:
             </PFullLight>
             <PFullLight>
-              <strong>Essener Mathematikwettbewerb</strong>
-              <strong>Der Bundeswettbewerb Mathematik</strong>
-              <strong>Känguru-Wettbewerb</strong>
-              <strong>Online-Team-Wettbewerb</strong>
-              <strong>PANGEA- Wettbewerb</strong>
-              <strong>Bolyai-Wettbewerb</strong>
+              <strong>
+                <a
+                  href="https://www.schulministerium.nrw.de/docs/Schulsystem/Unterricht/Lernbereiche-und-Faecher/Fremdsprachen/CertiLingua/index.html"
+                  target="_blank"
+                >
+                  Certilingua
+                </a>
+              </strong>
+
+              <strong>
+                <a href="https://www.europaschulen.nrw.de/" target="_blank">
+                  Europaschulen
+                </a>
+              </strong>
+              <strong>
+                <a
+                  href="http://www.europaeischer-referenzrahmen.de/delf.php"
+                  target="_blank"
+                >
+                  delf
+                </a>
+              </strong>
+              <strong>
+                <a
+                  href="https://www.essener-mathematikwettbewerb.de/"
+                  target="_blank"
+                >
+                  Essener Mathematikwettbewerb
+                </a>
+              </strong>
+              <strong>
+                <a href="https://www.mathe-wettbewerbe.de/bwm/" target="_blank">
+                  Der Bundeswettbewerb Mathematik
+                </a>
+              </strong>
+              <strong>
+                <a href="http://www.mathe-kaenguru.de/" target="_blank">
+                  Känguru-Wettbewerb
+                </a>
+              </strong>
+              <strong>
+                <a
+                  href="https://www.schulministerium.nrw.de/docs/bp/Schueler/Mitmachen/Wettbewerbe/mathematisch-naturwissenschaftlich/Mathe-Treff-Online-Team-Wettbewerb/index.html"
+                  target="_blank"
+                >
+                  Online-Team Wettbewerb Mathematik
+                </a>
+              </strong>
+              <strong>
+                <a href="https://pangea-wettbewerb.de/" target="_blank">
+                  Pangea-Wettbewerb
+                </a>
+              </strong>
+              <strong>
+                <a href="https://www.bolyaiteam.de/" target="_blank">
+                  Bolyai-Wettbewerb
+                </a>
+              </strong>
             </PFullLight>
           </Actions>
         </Content>
@@ -280,7 +307,7 @@ export default class MintHeader extends PureComponent {
           <MenschenHeadline />
           <MenschenSubheadline>Die Menschen hinter MINT</MenschenSubheadline>
           <PersonGrid people={mint} />
-          <Actions>
+          <Actions className="actions">
             <LinkButton primary to="/menschen">
               Alle kennenlernen
             </LinkButton>
