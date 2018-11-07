@@ -133,7 +133,7 @@ export default class HomeTeaserKultur extends PureComponent {
             </Row>
           </Grid>
           <Actions>
-            <LinkButton to="/kultur" secondary>
+            <LinkButton to="/kultur" secondary={1}>
               Mehr erfahren
             </LinkButton>
           </Actions>

@@ -123,7 +123,7 @@ export default class MintHeader extends PureComponent {
             vorrangig eine Männerdomäne waren.
             <br />
             <br />
-            Wettbewerbe und Projekte rund um diese Themen, fördern den Spaß, die
+            Wettbewerbe und Projekte rund um diese Themen fördern den Spaß, die
             Kreativität und schaffen Freiraum für Innovationen.
           </PFullLight>
 

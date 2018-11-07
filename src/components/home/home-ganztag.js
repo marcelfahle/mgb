@@ -50,9 +50,9 @@ export default class HomeGanztag extends PureComponent {
             Sportangebote).
           </PFullDark>
           <PFullDark>
-            Das Mädchengymnasium Essen Borbeck im Rahmen des offenen Ganztags
-            ein umfangreiches sowie abwechslungsreiches Betreuungsangebot nach
-            dem regulären Vormittagsunterricht an.
+            Das Mädchengymnasium Essen Borbeck bietet im Rahmen des offenen
+            Ganztags ein umfangreiches sowie abwechslungsreiches
+            Betreuungsangebot nach dem regulären Vormittagsunterricht an.
           </PFullDark>
           <PFullDark>
             Die Schulleitung, das Kollegium und das Betreuungsteam des Ganztags

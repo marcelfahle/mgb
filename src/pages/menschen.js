@@ -69,8 +69,9 @@ export default class Menschen extends PureComponent {
             <PersonGrid people={kollegium} />
             <SubheadFullDark>Schulpflegschaftvertreter</SubheadFullDark>
             <PFullDark>
-              Wir Agnes Dexling und Frank Szubertowicz dürfen voller Tatendrang,
-              in diesem Schuljahr die Eltern der Mädchen des MGB vertreten.
+              Wir, Agnes Dexling und Frank Szubertowicz dürfen voller
+              Tatendrang, in diesem Schuljahr die Eltern der Mädchen des MGB
+              vertreten.
             </PFullDark>
             <PFullDark>
               Gerne sind wir für Sie Ansprechpartner bei Fragen, bei jeglichen
@@ -85,7 +86,7 @@ export default class Menschen extends PureComponent {
             <SubheadFullDark>Die Schülerinnenvertretung am MGB</SubheadFullDark>
             <PFullDark>
               Zu Beginn eines jeden Schuljahres wählen die Schülerinnen
-              Vertreterinnen aus allen Jahrgangsstufen , die bei Fragen und
+              Vertreterinnen aus allen Jahrgangsstufen, die bei Fragen und
               Problemen ein offenes Ohr haben und in allen Belangen ansprechbar
               sind. Eine Liste der aktuellen Schülerinnenvertreterinnen sowie
               der Schülersprecherinnen und SV-Lehrerinnen des Schuljahres hängt

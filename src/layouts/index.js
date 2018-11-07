@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider, injectGlobal, css } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { Location } from '@reach/router'
 
 import Navbar from '../components/navbar'
 import './index.css'
@@ -64,7 +65,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -95,7 +96,11 @@ const Layout = ({ children }) => (
             <Wrapper>
               {children}
 
-              <Signup />
+              <Location>
+                {({ location }) =>
+                  location.pathname != '/anmeldung' && <Signup />
+                }
+              </Location>
               <Footer />
             </Wrapper>
           </Outer>

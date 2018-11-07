@@ -375,12 +375,12 @@ export default class KulturHeader extends PureComponent {
             <FullWidthVideo src="MGB-Kultur-Header5V2.mp4" />
             <SubheadFullLight>Kunst am MGB</SubheadFullLight>
             <PFullLight>
-              Kunst am MGB geht weit über die bloße Anwendung solcher Techniken
-              hinaus! Es wird genau hingeschaut, beobachtet, sehen gelernt. Es
-              wird geplant, gestaltet, beurteilt, optimiert, ausgeführt. Der
-              Blick auf die Wirklichkeit wird geschärft und neue Wirklichkeiten
-              werden von den Schülerinnen in ihren Arbeiten auf gestalterischem
-              Wege hervorgebracht.
+              Kunst am MGB geht weit über die bloße Anwendung von verschiedenen
+              Techniken hinaus! Es wird genau hingeschaut, beobachtet, sehen
+              gelernt. Es wird geplant, gestaltet, beurteilt, optimiert,
+              ausgeführt. Der Blick auf die Wirklichkeit wird geschärft und neue
+              Wirklichkeiten werden von den Schülerinnen in ihren Arbeiten auf
+              gestalterischem Wege hervorgebracht.
             </PFullLight>
           </KunstIntro>
         </Kunst>

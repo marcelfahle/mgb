@@ -404,7 +404,7 @@ export default class MintHeader extends PureComponent {
             </PSmallFullMedium>
           </Block>
           <Actions>
-            <Button secondary>Mehr erfahren</Button>
+            <Button secondary={1}>Mehr erfahren</Button>
           </Actions>
         </Content>
         <Menschen>

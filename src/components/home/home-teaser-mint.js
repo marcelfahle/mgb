@@ -133,7 +133,7 @@ export default class HomeTeaserMint extends PureComponent {
                 <PLight>
                   Neugierig sein - Fragen zu Phänomenen in der Natur zu stellen,
                   sie zu beobachten, zu untersuchen und zu experimentieren – das
-                  steht im Mittelpunkt des naturwissenschaft-lichen Unterrichts
+                  steht im Mittelpunkt des naturwissenschaftlichen Unterrichts
                   am Mädchengymnasium.
                 </PLight>
               </GridItem>
@@ -163,7 +163,7 @@ export default class HomeTeaserMint extends PureComponent {
             </Row>
           </Grid>
           <Actions>
-            <LinkButton to="/mint" secondary>
+            <LinkButton to="/mint" secondary={1}>
               Mehr erfahren
             </LinkButton>
           </Actions>

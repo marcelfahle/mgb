@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 
 import fblogo from './assets/fb-logo.svg'
 import footerlogo from './assets/footer-logo.svg'
+import gwlogo from './assets/Abbinder_GW-WS.png'
 import { mq, rem } from './util'
 
 const Wrapper = styled.div`
@@ -112,6 +113,9 @@ const Logo = styled.img`
   width: 51%;
   padding-top: 16px;
 `
+const GwLogoRow = styled.div`
+  margin-top: 40px;
+`
 
 export default class Footer extends PureComponent {
   render() {
@@ -131,6 +135,11 @@ export default class Footer extends PureComponent {
           <p>
             <Link to="/impressum">Impressum</Link>
           </p>
+          <GwLogoRow>
+            <a href="https://gedankenwerk.com" target="_blank">
+              <img width="100%" src={gwlogo} />
+            </a>
+          </GwLogoRow>
         </LogoCol>
         <AddressCol>
           <SubNav>

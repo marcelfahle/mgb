@@ -81,15 +81,15 @@ export default class MintHeader extends PureComponent {
             ihre Ansprechpartner haben.
             <br />• Alle Lehrerinnen und Lehrer arbeiten in enger Absprache nach
             einem gemeinsamen pädagogischen Konzept und verbindlichen
-            Lernkomptetenzen-Curriculum.
-            <br />• Am Kennenlernn-Nachmmitag schon vor den Ferien lernen die
-            Mädchen ihr Klassenleitungs- team und die neuen Mitschülerinnen
+            Lernkompetenzen-Curriculum.
+            <br />• Am Kennenlern-Nachmmitag schon vor den Ferien lernen die
+            Mädchen ihr Klassenleitungsteam und die neuen Mitschülerinnen
             kennen.
             <br />• Die neuen 5er bekommen im Patensystem je eine Patin aus
             einer 7. Klasse an die Seite, die ihnen beim Kennenlernen der Schule
             hilft.
             <br />• Eine feste Förderstunde in Deutsch in Klasse 5 gleicht
-            Unterscheide in der Schwerpunkt- setzung der Grundschulen an.
+            Unterschiede in der Schwerpunktsetzung der Grundschulen an.
             <br />• Der individuelle Förderunterricht bis zum Ende der
             Mittelstufe stützt die persönliche Entwicklung der Mädchen, fördert
             Stärken und gleicht Schwächen an.
@@ -116,11 +116,11 @@ export default class MintHeader extends PureComponent {
             Heftführung vergeben
             <br />
             <br />- die Schülerinnen/ Eltern erhalten mit jeder Klassenarbeit
-            eine Rückmeldung zur sonstigen Mitarbeit im Unterricht eine Reihe
+            eine Rückmeldung zur sonstigen Mitarbeit im Unterricht, eine Reihe
             von Methoden und Kompetenzen werden in festgelegten Fächern eingeübt
             und in verschiedenen Jahrgangsstufen wiederholt und vertieft. Die
             Schülerinnen erhalten zu Beginn der Klasse 5 ein Methodenportfolio,
-            das sie im Laufe Ihrer Schulzeit am MGB füllen und auf das sie immer
+            das sie im Laufe ihrer Schulzeit am MGB füllen und auf das sie immer
             wieder fächerübergreifend zurückgreifen können.
             <br />
             <br />
@@ -183,8 +183,8 @@ export default class MintHeader extends PureComponent {
             <br />
             <br />
             Das Grundkursangebot wird durch Literatur sowie 2-3 Projektkurse
-            ergänzt; Latein und Russisch werden in der Qualifikationsphase nicht
-            mehr angeboten.
+            ergänzt; Latein wird in der Qualifikationsphase nicht mehr
+            angeboten, Russisch nur bei ausreichendem Interesse.
             <br />
             <br />
           </PSmallFullMedium>

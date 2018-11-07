@@ -47,7 +47,7 @@ export default class Signup extends PureComponent {
             Anmeldung Ihrer Tochter benötigen. Wir freuen uns auf Sie.
           </PFullLight>
           <Actions>
-            <LinkButton to="/anmeldung" secondary>
+            <LinkButton to="/anmeldung" secondary={1}>
               Mehr erfahren
             </LinkButton>
           </Actions>

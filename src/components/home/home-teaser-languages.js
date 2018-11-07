@@ -63,7 +63,7 @@ export default class HomeTeaserLanguages extends PureComponent {
         <Teaser>
           <PFullDark>
             Seit 2007 ist das MGB zertifizierte Europaschule des Landes NRW und
-            Mitglied im Europaschulverein Essen. Die beinhaltet ein erweitertes
+            Mitglied im Europaschulverein Essen. Dies beinhaltet ein erweitertes
             Fremdsprachenangebot, die Teilnahme an Wettbewerben und Austauschen
             sowie Auslandspraktika und die Möglichkeit zur Erlangung des
             Sprachzertifikats DELF sowie des Exzellenzlabels „CertiLingua“.

@@ -151,9 +151,8 @@ export default class Kalender extends PureComponent {
         <Content>
           <SubheadMedium>VERANSTALTUNGEN UND TERMINE</SubheadMedium>
           <PSmallFullMedium>
-            Berufsberatung Ob nun Prüfungen anstehen, eine Reise oder eine
-            Schulveranstaltung der alle entgegenfiebern – hier werden sie
-            fündig.
+            Ob nun Prüfungen anstehen, eine Reise oder eine Schulveranstaltung
+            der alle entgegenfiebern – hier werden sie fündig.
           </PSmallFullMedium>
 
           <Calender>

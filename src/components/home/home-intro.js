@@ -100,7 +100,7 @@ export default class HomeIntro extends PureComponent {
             gefördert und besondere Begabungen in der Gemeinschaft vertieft.
           </Text>
           <Text>
-            <LinkButton to="/maedchenstaerken" secondary>
+            <LinkButton to="/maedchenstaerken" secondary={1}>
               Mehr erfahren
             </LinkButton>
           </Text>
