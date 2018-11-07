@@ -10,6 +10,8 @@ import Signup from '../components/signup'
 import Footer from '../components/footer'
 import { mq, WrapperPadding } from '../components/util'
 
+import './modal-video.min.css'
+
 const theme = {
   maxWidth: '1980px',
 }

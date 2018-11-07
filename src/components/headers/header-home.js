@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { withPrefix } from 'gatsby-link'
+import ModalVideo from 'react-modal-video'
 
 import headerbg from './header-home.jpg'
 import Button from '../button'
@@ -72,9 +73,20 @@ const Video = styled.video`
 `
 
 export default class HomeHeader extends React.PureComponent {
+  state = {
+    video: false,
+  }
+  showVideo = () => this.setState({ video: true })
+  hideVideo = () => this.setState({ video: false })
   render() {
     return (
       <Section>
+        <ModalVideo
+          channel="vimeo"
+          isOpen={this.state.video}
+          videoId="286004839"
+          onClose={this.hideVideo}
+        />
         <Video id="musikmenschen-video" autoPlay loop muted playsInline>
           <source src={withPrefix('MGB-Schule-Header.mp4')} />
         </Video>
@@ -88,7 +100,7 @@ export default class HomeHeader extends React.PureComponent {
             BUNT.
           </Subline>
           <p>
-            <Button>Video ansehen</Button>
+            <Button onClick={this.showVideo}>Video ansehen</Button>
           </p>
         </Content>
       </Section>

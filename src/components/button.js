@@ -6,7 +6,7 @@ import { mq, rem } from './util'
 
 const Style = css`
   color: #fff;
-
+  cursor: pointer;
   font-size: ${rem(24)}rem;
   font-weight: 600;
   padding: 6px 30px 10px 30px;
@@ -14,6 +14,9 @@ const Style = css`
   letter-spacing: -0.5px;
   background-color: #da121a;
   border: none;
+  &:focus {
+    outline: 0;
+  }
   ${mq.greaterThan('medium')`
     font-size: ${rem(24)}rem;
 		border-radius: 6px;

@@ -2,6 +2,7 @@ import { css } from 'styled-components'
 import { generateMedia } from 'styled-media-query'
 
 export const mq = generateMedia({
+  max: '2080px',
   veryhuge: '1680px',
   huge: '1440px',
   large: '1280px',
@@ -18,14 +19,20 @@ export const Left = css`
 `
 
 export const WrapperPadding = css`
-  padding-left: 20px;
-  padding-right: 20px;
-  ${mq.greaterThan('large')`
-    padding-left: 40px;
-    padding-right: 40px;
-  `};
-  ${mq.greaterThan('huge')`
+  //padding-left: 20px;
+  //padding-right: 20px;
+  //${mq.greaterThan('large')`
+  //  padding-left: 40px;
+  //  padding-right: 40px;
+  //`};
+  //${mq.greaterThan('huge')`
+  //  padding-left: 80px;
+  //  padding-right: 80px;
+  //  `};
+
+  ${mq.greaterThan('max')`
     padding-left: 80px;
     padding-right: 80px;
-    `};
+  `}
+  
 `
