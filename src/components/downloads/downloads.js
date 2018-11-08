@@ -49,6 +49,7 @@ const Content = styled.div`
 
 export default class Downloads extends PureComponent {
   render() {
+    const { downloads } = this.props
     return (
       <Section>
         <Header>
@@ -58,86 +59,24 @@ export default class Downloads extends PureComponent {
           <SubheadMedium>
             Alle wichtigen Informationen als download
           </SubheadMedium>
-          <PSmallFullMedium>
-            Berufsberatung
-            <br />
-            <a href="#">Berufsberatung MGB.pdf</a>
-            <br />
-            <br />
-            Biologie <br />
-            <a href="#">Curriculum Biologie Sek I.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_EF.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Evolution.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Genetik.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Oeko.pdf </a>
-            <br />
-            <a href="#">Curriculum_biologie_Q2 </a>
-            <br />
-            <a href="#">Neurophysiologie.pdf</a>
-            <br />
-            <br />
-            Certilingua/ Europaschule
-            <br />
-            <a href="#">Auslansschuljahr.pdf</a>
-            <br />
-            <a href="#">Certilingua.pdf</a>
-            <br />
-            <a href="#">Fahrtenkonzept des MGB.pdf</a>
-            <br />
-            <br />
-            <br />
-            Chemie
-            <br />
-            <a href="#">Curriculum_Chemie_EF.pdf</a>
-            <br />
-            <a href="#">Curriculum_Chemie_Q_GK.pdf </a>
-            <br />
-            <a href="#">Curriculum_Chemie_Q_LK.pdf</a>
-            <br />
-            <br />
-            Berufsberatung
-            <br />
-            <a href="#">Berufsberatung MGB.pdf</a>
-            <br />
-            <br />
-            Biologie <br />
-            <a href="#">Curriculum Biologie Sek I.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_EF.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Evolution.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Genetik.pdf</a>
-            <br />
-            <a href="#">Curriculum_Biologie_Q1_Oeko.pdf </a>
-            <br />
-            <a href="#">Curriculum_biologie_Q2 </a>
-            <br />
-            <a href="#">Neurophysiologie.pdf</a>
-            <br />
-            <br />
-            Certilingua/ Europaschule
-            <br />
-            <a href="#">Auslansschuljahr.pdf</a>
-            <br />
-            <a href="#">Certilingua.pdf</a>
-            <br />
-            <a href="#">Fahrtenkonzept des MGB.pdf</a>
-            <br />
-            <br />
-            <br />
-            Chemie
-            <br />
-            <a href="#">Curriculum_Chemie_EF.pdf</a>
-            <br />
-            <a href="#">Curriculum_Chemie_Q_GK.pdf </a>
-            <br />
-            <a href="#">Curriculum_Chemie_Q_LK.pdf</a>
-          </PSmallFullMedium>
+          {downloads.map(dl => {
+            const { id, group, download } = dl.node
+            return (
+              <PSmallFullMedium key={id}>
+                {group}
+                <br />
+                {download &&
+                  download.map((d, i) => (
+                    <React.Fragment key={d.file ? d.file.id : `f-${i}`}>
+                      <a target="_blank" href={d.file ? d.file.url : null}>
+                        {d.filename}
+                      </a>
+                      <br />
+                    </React.Fragment>
+                  ))}
+              </PSmallFullMedium>
+            )
+          })}
         </Content>
       </Section>
     )

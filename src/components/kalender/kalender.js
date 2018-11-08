@@ -195,18 +195,3 @@ export default class Kalender extends PureComponent {
     )
   }
 }
-
-export const query = graphql`
-  query DatesQuery {
-    allDatoCmsCalendar {
-      edges {
-        node {
-          startDate
-          endDate
-          title
-          description
-        }
-      }
-    }
-  }
-`
