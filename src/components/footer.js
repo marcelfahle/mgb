@@ -137,7 +137,7 @@ export default class Footer extends PureComponent {
           </p>
           <GwLogoRow>
             <a href="https://gedankenwerk.com" target="_blank">
-              <img width="100%" src={gwlogo} />
+              <img width="70%" src={gwlogo} />
             </a>
           </GwLogoRow>
         </LogoCol>
