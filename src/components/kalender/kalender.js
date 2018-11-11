@@ -236,10 +236,11 @@ export default class Kalender extends PureComponent {
                 </a>
               </LinkWrapper>
               <CurrentMonth>
-                {currentMonthDate
-                  .toDate()
-                  .toLocaleString('de-de', { month: 'long' })}{' '}
-                {currentMonthDate.format('YYYY')}
+                {currentMonthDate &&
+                  currentMonthDate
+                    .toDate()
+                    .toLocaleString('de-de', { month: 'long' })}{' '}
+                {currentMonthDate && currentMonthDate.format('YYYY')}
               </CurrentMonth>
               <LinkWrapper>
                 <a href="#" onClick={this.nextMonth}>
