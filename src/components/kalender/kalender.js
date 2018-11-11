@@ -198,7 +198,7 @@ export default class Kalender extends PureComponent {
     const months = this.allMonths()
 
     const currentMonthDate =
-      months && moment(months[this.state.current].node.startDate)
+      months.length > 0 && moment(months[this.state.current].node.startDate)
     const lastMonth = Moment().subtract('month', 1)
     const currentRange = currentMonthDate.range('month')
     return (
