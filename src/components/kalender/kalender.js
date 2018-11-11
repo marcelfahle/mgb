@@ -201,7 +201,7 @@ export default class Kalender extends PureComponent {
       months[this.state.current] &&
       moment(months[this.state.current].node.startDate)
     const lastMonth = Moment().subtract('month', 1)
-    const currentRange = currentMonthDate.range('month')
+    const currentRange = CurrentMonthDate && currentMonthDate.range('month')
     return (
       <Section>
         <Header>
@@ -251,7 +251,7 @@ export default class Kalender extends PureComponent {
             <Events>
               {data.map(d => {
                 const date = moment(d.node.startDate)
-                return date.within(currentRange) ? (
+                return currentRage && date.within(currentRange) ? (
                   <Event
                     key={this.getKey(d.node.startDate, d.node.title)}
                     day={this.getDay(d.node.startDate)}
