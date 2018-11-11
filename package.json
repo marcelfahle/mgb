@@ -10,7 +10,7 @@
     "gatsby-plugin-netlify": "^2.0.1",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^3.0.0",
-    "gatsby-source-datocms": "^1.1.14",
+    "gatsby-source-datocms": "^2.0.0",
     "gatsby-transformer-remark": "^2.1.11",
     "moment": "^2.22.2",
     "moment-range": "^4.0.1",

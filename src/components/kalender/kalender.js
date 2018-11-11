@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { withPrefix } from 'gatsby-link'
-import moment from 'moment'
+import Moment from 'moment'
 import { extendMoment } from 'moment-range'
 
 import Button, { LinkButton } from '../button'
@@ -79,6 +79,7 @@ const Month = styled.li`
       color: #666;
     }
   `};
+  ${({ selected }) => (selected ? `font-weight: bold;` : ``)};
 `
 const MonthHeader = styled.div`
   display: block;
@@ -116,16 +117,41 @@ const LinkWrapper = styled.div`
   }
 `
 
-moment.locale('de')
+Moment.locale('de-de')
+const moment = extendMoment(Moment)
 
 export default class Kalender extends PureComponent {
-  state = {
-    current: 0,
+  getMonthIndex = () => {
+    const months = this.allMonths(this.props.data)
+    const current = moment()
+    const i = months.findIndex(
+      e => this.getMonth(new Date(e.node.startDate)) == current.format('MMMM')
+    )
+    return i
   }
 
   goto = (i, e) => {
     e.preventDefault()
     this.setState({ current: i })
+  }
+
+  nextMonth = e => {
+    e.preventDefault()
+    this.setState({
+      current:
+        this.state.current == this.allMonths().length - 1
+          ? 0
+          : this.state.current + 1,
+    })
+  }
+  previousMonth = e => {
+    e.preventDefault()
+    this.setState({
+      current:
+        this.state.current == 0
+          ? this.allMonths().length - 1
+          : this.state.current - 1,
+    })
   }
 
   getMonth = d => d.toLocaleString('de-de', { month: 'long' })
@@ -140,9 +166,41 @@ export default class Kalender extends PureComponent {
     return `${start}${end}`
   }
 
+  formatTime = (s, e) => {
+    const sd = new Date(s)
+    const ed = e ? new Date(e) : null
+    const start =
+      sd.getHours() != 1
+        ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        : ''
+    const end =
+      e && start != '' && ed.getHours() != 1
+        ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        : ''
+    return start != '' ? `Zeit: ${start} ${end != '' ? ` - ${end}` : ''}` : ''
+  }
+
+  allMonths = () => {
+    const months = {}
+    return this.props.data.filter(d => {
+      const month = this.getMonth(new Date(d.node.startDate))
+      return months.hasOwnProperty(month) ? false : (months[month] = month)
+    })
+  }
+
+  state = {
+    current: this.getMonthIndex(),
+    months: this.allMonths(this.props.data),
+  }
+
   render() {
     const { data } = this.props
-    const now = new Date()
+    const months = this.allMonths()
+
+    const currentMonthDate = moment(months[this.state.current].node.startDate)
+    currentMonthDate.locale('de')
+    const lastMonth = Moment().subtract('month', 1)
+    const currentRange = currentMonthDate.range('month')
     return (
       <Section>
         <Header>
@@ -157,8 +215,12 @@ export default class Kalender extends PureComponent {
 
           <Calender>
             <Months>
-              {data.map((m, i) => (
-                <Month expired={now > new Date(m.node.startDate)}>
+              {months.map((m, i) => (
+                <Month
+                  key={m.node.startDate}
+                  expired={lastMonth > new Date(m.node.startDate)}
+                  selected={this.state.current == i}
+                >
                   <a href="#" onClick={e => this.goto(i, e)}>
                     {this.getMonth(new Date(m.node.startDate))}
                   </a>
@@ -168,25 +230,40 @@ export default class Kalender extends PureComponent {
 
             <TableHeader>
               <LinkWrapper>
-                <a href="#">&lt; VORHERIGER MONAT</a>
+                <a href="#" onClick={this.previousMonth}>
+                  &lt; VORHERIGER MONAT
+                </a>
               </LinkWrapper>
-              <CurrentMonth>MAI 2018</CurrentMonth>
+              <CurrentMonth>
+                {currentMonthDate
+                  .toDate()
+                  .toLocaleString('de-de', { month: 'long' })}{' '}
+                {currentMonthDate.format('YYYY')}
+              </CurrentMonth>
               <LinkWrapper>
-                <a href="#">NÄCHSTER MONAT &gt;</a>
+                <a href="#" onClick={this.nextMonth}>
+                  NÄCHSTER MONAT &gt;
+                </a>
               </LinkWrapper>
             </TableHeader>
 
             <Events>
               {data.map(d => {
-                return (
+                const date = moment(d.node.startDate)
+                return date.within(currentRange) ? (
                   <Event
                     key={this.getKey(d.node.startDate, d.node.title)}
                     day={this.getDay(d.node.startDate)}
                     date={this.formatDate(d.node.startDate, d.node.endDate)}
+                    time={this.formatTime(d.node.startDate, d.node.endDate)}
                     title={d.node.title}
-                    description={d.node.description}
+                    description={
+                      d.node.description +
+                      '<br/>' +
+                      this.formatTime(d.node.startDate, d.node.endDate)
+                    }
                   />
-                )
+                ) : null
               })}
             </Events>
           </Calender>
