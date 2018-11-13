@@ -167,6 +167,7 @@ export default class Kalender extends PureComponent {
   }
 
   formatTime = (s, e) => {
+    console.log('formattime', s, e)
     const sd = new Date(s)
     const ed = e ? new Date(e) : null
     const start =
@@ -210,7 +211,7 @@ export default class Kalender extends PureComponent {
         <Content>
           <SubheadMedium>VERANSTALTUNGEN UND TERMINE</SubheadMedium>
           <PSmallFullMedium>
-            Ob nun Prüfungen anstehen, eine Reise oder eine Schulveranstaltung
+            Ob nun Prüfungen anstehen, eine Reise oder eine Schulveranstaltung,
             der alle entgegenfiebern – hier werden sie fündig.
           </PSmallFullMedium>
 
