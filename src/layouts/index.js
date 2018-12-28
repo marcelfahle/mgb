@@ -22,8 +22,11 @@ injectGlobal`
     //font-size: 10px;
     box-sizing: border-box;
     font-size: 11px;
-    ${mq.greaterThan('medium')`
+    ${mq.greaterThan('small')`
       font-size: 12px;
+    `}
+    ${mq.greaterThan('medium')`
+      font-size: 14px;
     `}
     ${mq.greaterThan('huge')`
     `}
@@ -46,13 +49,13 @@ injectGlobal`
 `
 
 const Outer = styled.div`
-  //width: 1366px;
+  /*width: 1366px;*/
   max-width: 1980px;
   margin-left: auto;
   margin-right: auto;
   ${WrapperPadding};
   position: relative;
-  min-width: 960px;
+  /*min-width: 960px;*/
   overflow: hidden;
 `
 

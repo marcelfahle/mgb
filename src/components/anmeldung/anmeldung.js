@@ -7,7 +7,13 @@ import { extendMoment } from 'moment-range'
 import Event from './../kalender/event'
 import { Calender } from './../kalender/kalender'
 import Button, { LinkButton } from '../button'
-import { TypoDiv, PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import {
+  PageTitle,
+  TypoDiv,
+  PSmallFullMedium,
+  SubheadMedium,
+  PSmallMedium,
+} from '../typo'
 import { Video } from '../VideoGrid'
 import { mq, rem } from '../util'
 
@@ -37,15 +43,6 @@ const Header = styled.div`
     padding-top: 50%;
   }
   span {
-    position: absolute;
-    bottom: -26px;
-    left: -18px;
-    font-size: 11rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    ${mq.greaterThan('veryhuge')`
-			bottom: -36px;
-		`};
   }
 `
 const Content = styled.div`
@@ -77,7 +74,7 @@ export default class Anmeldung extends PureComponent {
           <Video id="musikmenschen-video" autoPlay loop muted playsInline>
             <source src={withPrefix('MGB-Maedchenstaerken-HeaderV1.mp4')} />
           </Video>
-          <span>Anmeldung</span>
+          <PageTitle>Anmeldung</PageTitle>
         </Header>
         <Content>
           <SubheadMedium>

@@ -15,22 +15,33 @@ const Header = styled.div`
   position: relative;
   background: white url(${bg}) no-repeat;
   background-size: cover;
-  &:before {
-    display: block;
-    content: ' ';
-    width: 100%;
-    padding-top: 43.5%;
-  }
+  padding-top: 14%;
+  padding-bottom: 14%;
+  display: flex;
+  align-items: center;
+  ${mq.greaterThan('medium')`
+		display: block;
+		//&:before {
+		//	display: block;
+		//		content: ' ';
+		//	width: 100%;
+		//		padding-top: 43.5%;
+		//	}
+
+	`};
 `
 const Headline = styled.div`
-  position: absolute;
-  top: 16%;
-  left: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   color: white;
-  font-size: ${rem(128)}rem;
+  font-size: ${rem(38)}rem;
   font-weight: 700;
 
+  ${mq.greaterThan('small')`
+		font-size: ${rem(78)}rem;
+	`};
   ${mq.greaterThan('large')`
+		font-size: ${rem(128)}rem;
 		left: 8%;
 	`};
 `

@@ -20,11 +20,15 @@ const Section = styled.section`
 
 const Content = styled.div`
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 5%;
   right: 0;
   //bottom: 0;
 
+  ${mq.greaterThan('small')`
+		top: 30%;
+
+	`};
   ${mq.greaterThan('large')`
 		left: 8%;
 	`};
@@ -32,10 +36,13 @@ const Content = styled.div`
 
 const Title = styled.h1`
   color: #ffffff;
-  font-size: ${rem(29)}rem;
+  font-size: ${rem(22)}rem;
   margin: 0;
   font-weight: 400;
   letter-spacing: -0.5px;
+  ${mq.greaterThan('mini')`
+		font-size: ${rem(29)}rem;
+	`};
 `
 const Subline = styled.h2`
   color: #ffffff;
@@ -44,7 +51,11 @@ const Subline = styled.h2`
   margin: 0 0 14px -5px;
   line-height: 0.95em;
   letter-spacing: -3px;
-  font-size: ${rem(83)}rem;
+  font-size: ${rem(55)}rem;
+
+  ${mq.greaterThan('mini')`
+		font-size: ${rem(83)}rem;
+	`};
   ${mq.greaterThan('medium')`
     font-size: ${rem(103)}rem;
 

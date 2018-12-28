@@ -9,8 +9,12 @@ export const Subhead = css`
   text-transform: uppercase;
   text-align: left;
   max-width: 90%;
-  font-size: ${rem(40)}rem;
+  font-size: ${rem(28)}rem;
   padding-left: 5%;
+  ${mq.greaterThan('small')`
+		font-size: ${rem(40)}rem;
+
+	`};
   ${mq.greaterThan('large')`
 		font-size: ${rem(50)}rem;
 		padding-left: 8%;
@@ -35,12 +39,16 @@ export const SubheadMedium = styled.h3`
   color: #4d4d4d;
 `
 const SubHeadFull = css`
-  max-width: 80%;
+  max-width: 95%;
   //margin-left: auto;
   margin-right: auto;
   text-align: left;
   padding-left: 5%;
 
+  ${mq.greaterThan('medium')`
+		max-width: 80%;
+
+	`};
   ${mq.greaterThan('large')`
 		padding-left: 8%;
 	`};
@@ -65,16 +73,14 @@ export const SubheadFullMedium = styled.h3`
 `
 export const P = css`
   font-family: 'Open Sans';
-  font-size: ${rem(32)}rem;
   line-height: 1.37em;
   a {
     color: inherit;
   }
 
-  font-size: ${rem(25)}rem;
+  font-size: ${rem(20)}rem;
   ${mq.greaterThan('large')`
 		font-size: ${rem(31)}rem;
-
 	`};
   ${mq.greaterThan('huge')`
 
@@ -85,11 +91,15 @@ export const P = css`
 `
 const FullP = css`
   text-align: left;
-  max-width: 80%;
+  max-width: 95%;
   //margin-left: auto;
   margin-right: auto;
   padding-left: 5%;
 
+  ${mq.greaterThan('medium')`
+		max-width: 80%;
+
+	`};
   ${mq.greaterThan('large')`
 		padding-left: 8%;
 	`};
@@ -219,23 +229,24 @@ export const MenschenSubheadline = styled.h4`
 export const MenschenHeadlineWrapper = styled.div`
   position: absolute;
   right: -1px;
-  top: -4%;
+  top: -0.7em;
   text-align: right;
   z-index: 1001;
-  img {
-    width: 90%;
-  }
-  ${mq.greaterThan('huge')`
-  top: -5%;
+
+  color: #f8f8f8;
+  font-size: 4rem;
+  line-height: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  ${mq.greaterThan('small')`
+		font-size: 8rem;
 	`};
-  ${mq.greaterThan('veryhuge')`
-  top: -6%;
+  ${mq.greaterThan('medium')`
+		font-size: 11rem;
 	`};
 `
 export const MenschenHeadline = () => (
-  <MenschenHeadlineWrapper>
-    <img src={menschenHeadline} />
-  </MenschenHeadlineWrapper>
+  <MenschenHeadlineWrapper>MENSCHEN</MenschenHeadlineWrapper>
 )
 export const Menschen = styled.div`
   position: relative;
@@ -247,4 +258,21 @@ export const Menschen = styled.div`
     padding-top: 96px;
     padding-bottom: 96px;
   }
+  z-index: 100;
+`
+
+export const PageTitle = styled.span`
+  position: absolute;
+  bottom: -5px;
+  left: -0.1em;
+  font-size: 4rem;
+  line-height: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  ${mq.greaterThan('small')`
+		font-size: 8rem;
+	`};
+  ${mq.greaterThan('medium')`
+		font-size: 11rem;
+	`};
 `

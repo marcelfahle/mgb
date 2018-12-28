@@ -28,8 +28,6 @@ const Content = styled.div`
     margin-top: 0;
     margin-bottom: 40px;
   }
-  p {
-  }
 `
 
 export default class HomeGanztag extends PureComponent {
@@ -41,7 +39,7 @@ export default class HomeGanztag extends PureComponent {
           <SubheadFullDark>Ganztag / Mensa</SubheadFullDark>
           <PFullDark>
             Im offenen Ganztag können die Schülerinnen von 13:30 bis 14:30 in
-            der hauseigenen Mensa zu Mittag essen.
+            der hauseigenen Mensa zu Mittag essen.
           </PFullDark>
           <PFullDark>
             Wir bieten auch eine 45minütige Hausaufgabenbetreuung von 14:15 –

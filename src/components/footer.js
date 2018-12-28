@@ -9,9 +9,13 @@ import { mq, rem } from './util'
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column-reverse;
+  ${mq.greaterThan('tablet')`
+		flex-direction: row;
+		height: 946px;
+	`};
   color: #fff;
   background-color: #424649;
-  height: 946px;
   padding-top: 32px;
   padding-bottom: 100px;
   font-size: ${rem(24)}rem;
@@ -29,7 +33,11 @@ const Wrapper = styled.div`
 `
 
 const LogoCol = styled.div`
-  flex-basis: 31%;
+  padding-top: 40px;
+  ${mq.greaterThan('tablet')`
+		flex-basis: 31%;
+		padding-top: 0px;
+	`};
   padding-left: 20px;
   padding-right: 20px;
   ${mq.greaterThan('large')`
@@ -38,13 +46,19 @@ const LogoCol = styled.div`
 	`};
 `
 const AddressCol = styled.div`
-  flex-basis: 36%;
+  ${mq.greaterThan('tablet')`
+		flex-basis: 36%;
+	`};
 `
 const SocialCol = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
-  padding-right: 20px;
+  display: none;
+  ${mq.greaterThan('tablet')`
+		display: flex;
+		justify-content: flex-end;
+		flex: 1;
+		padding-right: 20px;
+
+	`};
 
   ${mq.greaterThan('large')`
 		padding-right: 40px;
@@ -54,8 +68,11 @@ const SocialCol = styled.div`
 const SubNav = styled.ul`
   list-style: none;
   margin: 0;
-  padding: 0 0 60px 0;
+  padding: 0px 0 60px 20px;
   width: 90%;
+  ${mq.greaterThan('tablet')`
+		padding: 0 0 60px 0;
+	`};
   li {
     border-bottom: 1px solid white;
     text-transform: uppercase;
@@ -78,6 +95,10 @@ const FBLink = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   line-height: 40px;
+	padding: 20px;
+  ${mq.greaterThan('tablet')`
+		padding: 0px;
+	`};
 	${mq.greaterThan('huge')`
 		line-height: 90px;
 	`}

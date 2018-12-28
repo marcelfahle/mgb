@@ -44,11 +44,15 @@ const Content = styled.div`
 `
 
 export const Calender = styled.div`
-  width: 90%;
-  padding-left: 20px;
-  padding-right: 20px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 
+  ${mq.greaterThan('medium')`
+		width: 90%;
+		padding-left: 20px;
+		padding-right: 20px;
+	`};
   ${mq.greaterThan('large')`
 		width: 75%;
 	`};

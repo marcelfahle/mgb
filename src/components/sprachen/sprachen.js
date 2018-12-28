@@ -11,7 +11,16 @@ import grid_images from './../mint-images.png'
 import maskMathematik from './../assets/mask-mathematik.svg'
 import layover from './../assets/layover-mint.svg'
 import Button, { LinkButton } from '../button'
-import { PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import {
+  Menschen,
+  MenschenHeadline,
+  MenschenHeadlineWrapper,
+  PSmallFullMedium,
+  SubheadMedium,
+  PSmallMedium,
+  SubheadFullDark,
+  PFullDark,
+} from '../typo'
 import { mq, rem } from '../util'
 
 import paris from './france.png'
@@ -44,7 +53,10 @@ const Header = styled.div`
   }
 
   padding-top: ${rem(64)}rem;
-  font-size: ${rem(80)}rem;
+  font-size: ${rem(40)}rem;
+  ${mq.greaterThan('mini')`
+		font-size: ${rem(60)}rem;
+	`};
   ${mq.greaterThan('large')`
 		font-size: ${rem(128)}rem;
 	`};
@@ -87,31 +99,16 @@ position: relative;
 `
 
 const GridItem = styled.div`
-  max-width: 50%;
-  text-align: left;
-  &.grid1,
-  &.grid3 {
-    margin-right: 2%;
-    margin-left: auto;
-  }
-  &.grid2,
-  &.grid4 {
-    margin-left: 70px;
-    margin-right: auto;
-  }
-  &.grid1 {
-    padding-top: 2%;
-  }
-  &.grid2 {
-    margin-top: 14%;
-  }
-  &.grid3 {
-    margin-top: 19%;
-  }
-  &.grid4 {
-    margin-top: 19%;
-    margin-bottom: 9%;
-  }
+  ${mq.greaterThan('medium')`
+		max-width: 50%;
+		text-align: left;
+		&.grid1 {
+			margin-right: 2%;
+			margin-left: auto;
+			padding-top: 2%;
+		}
+	`};
+
   h4 {
     font-family: 'Open Sans';
     font-size: 50px;
@@ -125,54 +122,25 @@ const GridItem = styled.div`
 `
 const Actions = styled.div`
   padding-top: 64px;
+  p {
+    strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1.2em;
+      &:first-child {
+        padding-top: 1.2em;
+      }
+    }
+  }
 `
 const GridVideo = styled.div`
-  position: absolute;
-  width: 50%;
+  ${mq.greaterThan('medium')`
+		position: absolute;
+		width: 50%;
+	`};
   img {
     width: 100%;
-  }
-
-  &.vw-mathematik {
-    top: 0;
-    left: 0;
-  }
-  &.vw-informatik {
-    top: 664px;
-    right: 0;
-  }
-  &.vw-natur {
-    top: 1326px;
-    left: 0;
-  }
-  &.vw-technik {
-    top: 1990px;
-    right: 0;
-  }
-`
-const Video = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  &.vid-mathematik {
-    -webkit-clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
-    clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
-  }
-  &.vid-informatik {
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 94%);
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 94%);
-  }
-  &.vid-natur {
-    -webkit-clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
-    clip-path: polygon(0 0, 100% 8%, 100% 91%, 0% 100%);
-  }
-  &.vid-technik {
-    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 97%);
   }
 `
 
@@ -226,31 +194,6 @@ const Logos = styled.img`
   width: 50%;
 `
 
-const MenschenHeadlineWrapper = styled.div`
-  position: absolute;
-  right: -1px;
-  top: -5.5%;
-  text-align: right;
-  img {
-    width: 90%;
-  }
-`
-const MenschenHeadline = () => (
-  <MenschenHeadlineWrapper>
-    <img src={menschenHeadline} />
-  </MenschenHeadlineWrapper>
-)
-const Menschen = styled.div`
-  position: relative;
-  min-height: 400px;
-  background-image: linear-gradient(to right, #f8f8f8 0%, #f2f2f2 100%);
-  padding-bottom: 100px;
-  ${Actions} {
-    text-align: center;
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-`
 const MenschenSubheadline = styled.h4`
   font-size: ${rem(50)}rem;
   font-weight: 700;
@@ -345,7 +288,6 @@ export default class MintHeader extends PureComponent {
               <br />
               Also: Wie wär’s mit Russisch?!
             </SubheadMedium>
-            <Logos src={logosImg} />
           </Block>
           <Block>
             <img src={usaImg} width="100%" />
@@ -406,6 +348,30 @@ export default class MintHeader extends PureComponent {
           <Actions>
             <Button secondary={1}>Mehr erfahren</Button>
           </Actions>
+          <Actions>
+            <SubheadFullDark>Teilnahme an Sprach-Wettbewerben</SubheadFullDark>
+
+            <PFullDark>
+              <strong>
+                <a
+                  href="https://www.schulministerium.nrw.de/docs/Schulsystem/Unterricht/Lernbereiche-und-Faecher/Fremdsprachen/CertiLingua/index.html"
+                  target="_blank"
+                >
+                  Certilingua
+                </a>
+              </strong>
+
+              <strong>
+                <a
+                  href="http://www.europaeischer-referenzrahmen.de/delf.php"
+                  target="_blank"
+                >
+                  delf
+                </a>
+              </strong>
+            </PFullDark>
+          </Actions>
+          <Logos src={logosImg} />
         </Content>
         <Menschen>
           <MenschenHeadline />

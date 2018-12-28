@@ -8,7 +8,16 @@ import { mq, rem } from './util'
 
 const Element = styled.div`
 	position: relative;
-	flex-basis: calc(33.333% - 10px);
+	flex-basis: calc(100% - 10px);
+  ${mq.greaterThan('small')`
+		flex-basis: calc(50% - 10px);
+
+	`};
+  ${mq.greaterThan('medium')`
+		flex-basis: calc(33.333% - 10px);
+
+	`};
+
 	margin: 5px;
 	box-sizing: border-box;
 
@@ -31,7 +40,7 @@ const Element = styled.div`
 	}
 `
 const Details = styled.div`
-  height: 45%;
+  height: 50%;
   padding-left: 10px;
   padding-right: 10px;
   background-image: linear-gradient(
@@ -48,7 +57,7 @@ const Details = styled.div`
 `
 const Name = styled.p`
   color: #ffffff;
-  font-size: ${rem(26)}rem;
+  font-size: ${rem(24)}rem;
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 0.5em;
@@ -69,7 +78,7 @@ const Name = styled.p`
 `
 const Job = styled.p`
   color: #ffffff;
-  font-size: ${rem(26)}rem;
+  font-size: ${rem(24)}rem;
   line-height: 1.3;
   margin-top: 0;
 

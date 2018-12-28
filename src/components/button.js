@@ -7,9 +7,9 @@ import { mq, rem } from './util'
 const Style = css`
   color: #fff;
   cursor: pointer;
-  font-size: ${rem(24)}rem;
+  font-size: ${rem(18)}rem;
   font-weight: 600;
-  padding: 6px 30px 10px 30px;
+  padding: 6px 20px 7px 20px;
   border-radius: 4px;
   letter-spacing: -0.5px;
   background-color: #da121a;
@@ -17,6 +17,13 @@ const Style = css`
   &:focus {
     outline: 0;
   }
+  ${mq.greaterThan('mini')`
+    font-size: ${rem(22)}rem;
+	`};
+  ${mq.greaterThan('small')`
+    font-size: ${rem(24)}rem;
+		padding: 6px 30px 10px 30px;
+	`};
   ${mq.greaterThan('medium')`
     font-size: ${rem(24)}rem;
 		border-radius: 6px;

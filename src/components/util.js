@@ -10,6 +10,7 @@ export const mq = generateMedia({
   tablet: '960px',
   small: '768px',
   mini: '450px',
+  xxs: '400px',
 })
 
 export const rem = px => (px / 16).toFixed(2)

@@ -4,6 +4,7 @@ import { withPrefix } from 'gatsby-link'
 
 import Button, { LinkButton } from '../button'
 import {
+  PageTitle,
   PSmallFullMedium as P,
   SubheadMedium as H,
   PSmallMedium as S,
@@ -30,21 +31,16 @@ const Header = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 420px;
+  height: 160px;
   background-image: linear-gradient(
     -90deg,
     #fad961 0%,
     #ef9649 42%,
     #da121a 100%
   );
-  span {
-    position: absolute;
-    bottom: -26px;
-    left: -18px;
-    font-size: 11rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+  ${mq.greaterThan('small')`
+		height: 420px;
+	`};
 `
 const Content = styled.div`
   padding-top: 18px;
@@ -56,7 +52,7 @@ export default class Impressum extends PureComponent {
     return (
       <Section>
         <Header>
-          <span>Impressum</span>
+          <PageTitle>Impressum</PageTitle>
         </Header>
         <Content>
           <H>Datenschutz</H>

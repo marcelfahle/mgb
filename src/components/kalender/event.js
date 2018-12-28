@@ -15,13 +15,22 @@ const Wrapper = styled.li`
 const Day = styled.div`
   font-weight: 700;
   text-align: center;
-  border: 4px solid white;
+  border: 2px solid white;
+  margin: 10px 0px 10px 12px;
+  font-size: 33px;
+  width: 48px;
+  height: 48px;
+  line-height: 46px;
 
-  margin: 10px 20px 10px 42px;
-  font-size: 63px;
-  width: 88px;
-  height: 88px;
-  line-height: 76px;
+  ${mq.greaterThan('small')`
+		display: block;
+		border: 4px solid white;
+		margin: 10px 0px 10px 42px;
+		font-size: 63px;
+		width: 88px;
+		height: 88px;
+		line-height: 76px;
+	`};
   ${mq.greaterThan('large')`
 		font-size: 93px;
 		width: 128px;
@@ -34,12 +43,20 @@ const Details = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+  ${mq.greaterThan('small')`
+		margin-left: 20px;
+	`};
 `
 const EventDate = styled.div`
   margin-top: 12px;
   margin-bottom: 4px;
 
-  font-size: 24px;
+  font-size: 14px;
+  ${mq.greaterThan('small')`
+		font-size: 24px;
+
+	`};
   ${mq.greaterThan('large')`
 		font-size: 31px;
 		margin-bottom: 12px;
@@ -47,17 +64,36 @@ const EventDate = styled.div`
 `
 const Title = styled.div`
   font-weight: 600;
-  margin-bottom: 7px;
 
-  font-size: 24px;
+  font-size: 14px;
+  ${mq.greaterThan('xxs')`
+		font-size: 16px;
+	`};
+  ${mq.greaterThan('small')`
+		font-size: 24px;
+		margin-bottom: 7px;
+	`};
   ${mq.greaterThan('large')`
 		font-size: 31px;
 	`};
 `
 const Description = styled.div`
   margin-bottom: 4px;
+  p {
+    margin: 0.4em 0;
+  }
 
-  font-size: 20px;
+  font-size: 14px;
+  ${mq.greaterThan('xxs')`
+		font-size: 16px;
+	`};
+  ${mq.greaterThan('small')`
+		font-size: 20px;
+		p { 
+			margin: 0.4em 0;
+		}
+
+	`};
   ${mq.greaterThan('large')`
 		margin-bottom: 12px;
 		font-size: 26px;

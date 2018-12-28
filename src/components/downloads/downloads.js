@@ -3,7 +3,12 @@ import styled from 'styled-components'
 import { withPrefix } from 'gatsby-link'
 
 import Button, { LinkButton } from '../button'
-import { PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import {
+  PageTitle,
+  PSmallFullMedium,
+  SubheadMedium,
+  PSmallMedium,
+} from '../typo'
 import { Video } from '../VideoGrid'
 import { mq, rem } from '../util'
 
@@ -26,21 +31,16 @@ const Header = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 420px;
+  height: 160px;
   background-image: linear-gradient(
     -90deg,
     #fad961 0%,
     #ef9649 42%,
     #da121a 100%
   );
-  span {
-    position: absolute;
-    bottom: -26px;
-    left: -18px;
-    font-size: 11rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+  ${mq.greaterThan('small')`
+		height: 420px;
+	`};
 `
 const Content = styled.div`
   padding-top: 18px;
@@ -53,7 +53,7 @@ export default class Downloads extends PureComponent {
     return (
       <Section>
         <Header>
-          <span>Downloads</span>
+          <PageTitle>Downloads</PageTitle>
         </Header>
         <Content>
           <SubheadMedium>

@@ -30,31 +30,26 @@ const Header = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  span {
-    position: absolute;
-    left: -18px;
-    bottom: -18px;
-    font-size: 8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    ${mq.greaterThan('large')`
-			bottom: -26px;
-			font-size: 10rem;
-		`};
-    ${mq.greaterThan('huge')`
-			font-size: 9rem;
-		`};
-    ${mq.greaterThan('veryhuge')`
-			font-size: 11rem;
-			bottom: -36px;
-		`};
-  }
 `
 const Content = styled.div`
   padding-top: 18px;
   padding-bottom: 147px;
+`
+
+export const PageTitle = styled.span`
+  position: absolute;
+  bottom: -5px;
+  left: -0.1em;
+  font-size: 3rem;
+  line-height: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  ${mq.greaterThan('small')`
+		font-size: 8rem;
+	`};
+  ${mq.greaterThan('large')`
+		font-size: 11rem;
+	`};
 `
 
 export default class MintHeader extends PureComponent {
@@ -65,7 +60,7 @@ export default class MintHeader extends PureComponent {
           <Video id="musikmenschen-video" autoPlay loop muted playsInline>
             <source src={withPrefix('MGB-Maedchenstaerken-HeaderV1.mp4')} />
           </Video>
-          <span>MÄDCHENSTÄRKEN</span>
+          <PageTitle>MÄDCHENSTÄRKEN</PageTitle>
         </Header>
         <Content>
           <SubheadMedium>Der Übergang von der Grundschule</SubheadMedium>

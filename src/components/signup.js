@@ -13,8 +13,7 @@ const Section = styled.section`
   );
   padding-top: 1px;
   padding-bottom: 110px;
-  -webkit-clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0%, 100% 5%, 100% 100%, 0 100%);
   margin-top: -10%;
 `
 

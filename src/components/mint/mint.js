@@ -11,6 +11,7 @@ import { LinkButton } from '../button'
 import menschenHeadline from './../menschen.svg'
 import PersonGrid from '../person-grid'
 import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
+import { mq, rem } from '../util'
 
 import { mint } from './../data'
 import {
@@ -45,7 +46,10 @@ const Header = styled.div`
 const Content = styled.div`
   text-align: center;
   padding-top: 18px;
-  padding-bottom: 277px;
+  padding-bottom: 40px;
+  ${mq.greaterThan('medium')`
+		padding-bottom: 277px;
+	`};
 `
 
 const Actions = styled.div`

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { mq, rem } from './util'
 
 export const Grid = styled.div`
   //position: relative;
@@ -19,13 +20,18 @@ export const Row = styled.div`
     flex-direction: row-reverse;
   }
   > * {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
+    ${mq.greaterThan('small')`
+			flex: 0 0 50%;
+		`};
     height: 29%;
   }
 `
 
 export const GridItem = styled.div`
-  max-width: 50%;
+  ${mq.greaterThan('small')`
+		max-width: 50%;
+	`};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

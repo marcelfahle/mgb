@@ -17,7 +17,7 @@ export default DownloadsPage
 
 export const query = graphql`
   query DownloadsQuery {
-    allDatoCmsDownloadsGroup {
+    allDatoCmsDownloadsGroup(sort: { fields: [group], order: ASC }) {
       edges {
         node {
           id

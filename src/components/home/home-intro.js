@@ -17,23 +17,32 @@ const Section = styled.section`
     #da121a 100%
   );
   color: white;
-  -webkit-clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 92%);
-  clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 92%);
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+  margin-top: -10%;
+  margin-bottom: -10%;
+  display: flex;
+  align-items: center;
+  ${mq.greaterThan('medium')`
   &:before {
     display: block;
     content: ' ';
     width: 100%;
     padding-top: 54.2%;
   }
-  margin-top: -8%;
+		
+	`};
 `
 
 const Content = styled.div`
-  position: absolute;
-  top: 50%;
   right: 0;
-  //bottom: 0;
-  transform: translateY(-50%);
+  margin-top: 14%;
+  margin-bottom: 14%;
+  ${mq.greaterThan('medium')`
+		position: absolute;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		
+	`};
 `
 
 const Headline = styled.h2`
@@ -41,7 +50,10 @@ const Headline = styled.h2`
   font-weight: 700;
   margin-bottom: 0.2em;
   padding-left: 5%;
-  font-size: ${rem(78)}rem;
+  font-size: ${rem(40)}rem;
+  ${mq.greaterThan('medium')`
+		font-size: ${rem(78)}rem;
+	`};
   ${mq.greaterThan('medium')`
     font-size: ${rem(88)}rem;
     margin-left: -5px;
@@ -49,18 +61,17 @@ const Headline = styled.h2`
   ${mq.greaterThan('large')`
 		padding-left: 8%;
 	`};
-
-  //${mq.greaterThan('veryhuge')`
-  //  font-size: ${rem(128)}rem;
-  //  margin-left: -10px;
-  //`};
 `
 const Subline = styled.h3`
   margin: 0;
-  font-size: ${rem(34)}rem;
+  font-size: ${rem(28)}rem;
   font-weight: 700;
 
   padding-left: 5%;
+  max-width: 50%;
+  ${mq.greaterThan('small')`
+		font-size: ${rem(34)}rem;
+	`};
   ${mq.greaterThan('medium')`
 		font-size: ${rem(40)}rem;
 	`};
@@ -81,9 +92,13 @@ const Text = styled(PLight)`
 
 const Deco = styled.img`
   position: absolute;
-  top: 7%;
+  top: 50%;
+  transform: translateY(-50%);
   right: -9%;
-  height: 86%;
+  height: 50%;
+  ${mq.greaterThan('small')`
+		height: 86%;
+	`};
 `
 
 export default class HomeIntro extends PureComponent {
