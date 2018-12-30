@@ -2,16 +2,24 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { withPrefix } from 'gatsby-link'
-import Moment from 'moment'
+import moment from 'moment'
 import { extendMoment } from 'moment-range'
 
 import Button, { LinkButton } from '../button'
-import { P, PSmallFullMedium, SubheadMedium, PSmallMedium } from '../typo'
+import {
+  PageTitle,
+  P,
+  PSmallFullMedium,
+  SubheadMedium,
+  PSmallMedium,
+} from '../typo'
 import { Video } from '../VideoGrid'
 import { mq, rem } from '../util'
 import Event from './event'
 
 import { kultur as kulturKollegen } from './../data'
+import prev from './prev.png'
+import next from './next.png'
 
 const Section = styled.section`
   position: relative;
@@ -27,16 +35,12 @@ const Header = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 420px;
+  height: 160px;
   background-image: linear-gradient(-90deg, #8de9ff 0%, #55a6df 100%);
-  span {
-    position: absolute;
-    bottom: -26px;
-    left: -18px;
-    font-size: 11rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+
+  ${mq.greaterThan('small')`
+		height: 420px;
+	`};
 `
 const Content = styled.div`
   padding-top: 18px;
@@ -59,9 +63,13 @@ export const Calender = styled.div`
 `
 
 const Months = styled.ul`
+  display: none;
   list-style: none;
   padding: 0;
   text-align: center;
+  ${mq.greaterThan('small')`
+		display: block;
+	`};
 `
 const Month = styled.li`
   ${P};
@@ -100,12 +108,15 @@ const TableHeader = styled.div`
 const CurrentMonth = styled.p`
   flex-grow: 1;
   text-align: center;
-  font-size: 50px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   color: #4d4d4d;
   margin: 0;
   align-items: center;
+  ${mq.greaterThan('tablet')`
+		font-size: 50px;
+	`};
 `
 const LinkWrapper = styled.div`
   flex: 1;
@@ -114,22 +125,38 @@ const LinkWrapper = styled.div`
   align-items: center;
   justify-content: center;
   a {
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 24px;
     text-transform: uppercase;
     text-decoration: none;
     color: #808080;
+    i {
+      vertical-align: middle;
+    }
+    span {
+      display: none;
+    }
+    ${mq.greaterThan('tablet')`
+			span {
+				display: inline;
+			}
+		`};
+    ${mq.greaterThan('large')`
+			font-size: 22px;
+		`};
   }
 `
 
-Moment.locale('de-de')
-const moment = extendMoment(Moment)
+moment.locale('de')
+const mom = extendMoment(moment)
 
 export default class Kalender extends PureComponent {
   getMonthIndex = () => {
     const months = this.allMonths(this.props.data)
-    const current = moment()
+    const current = mom().locale('de')
+    current.locale('de')
     const i = months.findIndex(
-      e => this.getMonth(new Date(e.node.startDate)) == current.format('MMMM')
+      e => this.getEnMonth(new Date(e.node.startDate)) == current.format('MMMM')
     )
     return i
   }
@@ -158,6 +185,8 @@ export default class Kalender extends PureComponent {
     })
   }
 
+  getEnMonth = d => d.toLocaleString('en-GB', { month: 'long' })
+
   getMonth = d => d.toLocaleString('de-de', { month: 'long' })
 
   getDay = d => new Date(d).toLocaleString('de-de', { day: '2-digit' })
@@ -171,7 +200,6 @@ export default class Kalender extends PureComponent {
   }
 
   formatTime = (s, e) => {
-    console.log('formattime', s, e)
     const sd = new Date(s)
     const ed = e ? new Date(e) : null
     const start =
@@ -204,13 +232,13 @@ export default class Kalender extends PureComponent {
 
     const currentMonthDate =
       months[this.state.current] &&
-      moment(months[this.state.current].node.startDate)
-    const lastMonth = Moment().subtract('month', 1)
+      mom(months[this.state.current].node.startDate)
+    const lastMonth = moment().subtract('month', 1)
     const currentRange = currentMonthDate && currentMonthDate.range('month')
     return (
       <Section>
         <Header>
-          <span>Kalender</span>
+          <PageTitle>Kalender</PageTitle>
         </Header>
         <Content>
           <SubheadMedium>VERANSTALTUNGEN UND TERMINE</SubheadMedium>
@@ -237,7 +265,10 @@ export default class Kalender extends PureComponent {
             <TableHeader>
               <LinkWrapper>
                 <a href="#" onClick={this.previousMonth}>
-                  &lt; VORHERIGER MONAT
+                  <i>
+                    <img src={prev} alt="VORHERIGER MONAT" />
+                  </i>{' '}
+                  <span>VORHERIGER MONAT</span>
                 </a>
               </LinkWrapper>
               <CurrentMonth>
@@ -249,14 +280,17 @@ export default class Kalender extends PureComponent {
               </CurrentMonth>
               <LinkWrapper>
                 <a href="#" onClick={this.nextMonth}>
-                  NÄCHSTER MONAT &gt;
+                  <span>NÄCHSTER MONAT</span>{' '}
+                  <i>
+                    <img src={next} alt="NÄCHSTER MONAT" />
+                  </i>
                 </a>
               </LinkWrapper>
             </TableHeader>
 
             <Events>
               {data.map(d => {
-                const date = moment(d.node.startDate)
+                const date = mom(d.node.startDate)
                 return currentRange && date.within(currentRange) ? (
                   <Event
                     key={this.getKey(d.node.startDate, d.node.title)}
