@@ -5,13 +5,13 @@ import { withPrefix } from 'gatsby-link'
 import header from './../components/headers/header-menschen.png'
 import PersonGrid from '../components/person-grid'
 
-import { schulleitung, kollegium } from './../components/data'
-
 import Layout from '../layouts/'
 import { SubheadFullDark, PFullDark } from '../components/typo'
 import { Video } from './../components/VideoGrid'
 
 import menschenTitle from './../components/menschen/title.svg'
+
+import { graphql } from 'gatsby'
 
 const Wrapper = styled.div`
   background: #f8f8f8;
@@ -51,6 +51,10 @@ const Content = styled.div`
 
 export default class Menschen extends PureComponent {
   render() {
+    const { data } = this.props
+    const schulleitung = data.allDatoCmsAllTeacherCopy3.edges
+    const kollegium = data.allDatoCmsAllTeacherCopy2.edges
+
     return (
       <Layout>
         <Wrapper>
@@ -107,3 +111,32 @@ export default class Menschen extends PureComponent {
     )
   }
 }
+
+export const query = graphql`
+  query MenschenQuery {
+    allDatoCmsAllTeacherCopy3(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          name
+          subjects
+          photo {
+            id
+            url
+          }
+        }
+      }
+    }
+    allDatoCmsAllTeacherCopy2(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          name
+          subjects
+          photo {
+            id
+            url
+          }
+        }
+      }
+    }
+  }
+`

@@ -108,6 +108,7 @@ const FullVideo = styled.div`
 
 export default class MintHeader extends PureComponent {
   render() {
+    const { menschen } = this.props
     return (
       <Section>
         <Header>
@@ -310,7 +311,7 @@ export default class MintHeader extends PureComponent {
         <Menschen>
           <MenschenHeadline />
           <MenschenSubheadline>Die Menschen hinter MINT</MenschenSubheadline>
-          <PersonGrid people={mint} />
+          <PersonGrid people={menschen} />
           <Actions className="actions">
             <LinkButton primary to="/menschen">
               Alle kennenlernen

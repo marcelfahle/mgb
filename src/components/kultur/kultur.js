@@ -33,8 +33,6 @@ import PersonGrid from '../person-grid'
 import { Row, Grid, GridItem, GridVideo, Video } from '../VideoGrid'
 import { FullWidthVideo } from '../FullWidthVideo'
 
-import { kultur as kulturKollegen } from './../data'
-
 const Section = styled.section`
   position: relative;
   background-image: linear-gradient(to right, #ff8e00 0%, #ac005f 100%);
@@ -162,6 +160,7 @@ const KunstIntro = styled.div`
 
 export default class KulturHeader extends PureComponent {
   render() {
+    const { menschen } = this.props
     return (
       <Section>
         <Header>
@@ -389,7 +388,7 @@ export default class KulturHeader extends PureComponent {
           <MenschenSubheadline>
             Die Menschen hinter der Kultur
           </MenschenSubheadline>
-          <PersonGrid people={kulturKollegen} />
+          <PersonGrid people={menschen} />
           <Actions className="actions">
             <LinkButton to="/menschen" primary>
               Alle kennenlernen

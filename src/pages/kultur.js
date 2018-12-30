@@ -6,10 +6,27 @@ import KulturContent from '../components/kultur/kultur'
 
 import Layout from '../layouts/'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <KulturContent />
+    <KulturContent menschen={data.allDatoCmsAllTeacherCopy5.edges} />
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query MenschenKulturQuery {
+    allDatoCmsAllTeacherCopy5(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          name
+          subjects
+          photo {
+            id
+            url
+          }
+        }
+      }
+    }
+  }
+`

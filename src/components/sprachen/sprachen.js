@@ -211,6 +211,7 @@ const MenschenSubheadline = styled.h4`
 
 export default class MintHeader extends PureComponent {
   render() {
+    const { menschen } = this.props
     return (
       <Section>
         <Header>
@@ -378,7 +379,7 @@ export default class MintHeader extends PureComponent {
           <MenschenSubheadline>
             Die Menschen hinter den Sprachen
           </MenschenSubheadline>
-          <PersonGrid people={kulturKollegen} />
+          <PersonGrid people={menschen} />
           <Actions>
             <LinkButton to="/menschen">Alle kennenlernen</LinkButton>
           </Actions>

@@ -18,10 +18,10 @@ export default class PersonGrid extends PureComponent {
       <Grid>
         {people.map(p => (
           <Person
-            name={p.name}
-            key={p.name}
-            subjects={p.subjects}
-            photo={p.photo}
+            name={p.node.name}
+            key={p.node.name}
+            subjects={p.node.subjects}
+            photo={p.node.photo ? p.node.photo.url : null}
           />
         ))}
       </Grid>
