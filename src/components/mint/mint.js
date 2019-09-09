@@ -247,7 +247,7 @@ export default class MintHeader extends PureComponent {
               verschiedenen Mathematikwettbewerben im Jahr an unserer Schule an:
             </PFullLight>
             <PFullLight>
-              <strong>
+              {/*<strong>
                 <a
                   href="https://www.schulministerium.nrw.de/docs/Schulsystem/Unterricht/Lernbereiche-und-Faecher/Fremdsprachen/CertiLingua/index.html"
                   target="_blank"
@@ -268,7 +268,7 @@ export default class MintHeader extends PureComponent {
                 >
                   delf
                 </a>
-              </strong>
+							</strong>*/}
               <strong>
                 <a
                   href="https://www.essener-mathematikwettbewerb.de/"

@@ -370,6 +370,11 @@ export default class MintHeader extends PureComponent {
                   delf
                 </a>
               </strong>
+              <strong>
+                <a href="https://www.europaschulen.nrw.de/" target="_blank">
+                  Europaschulen
+                </a>
+              </strong>
             </PFullDark>
           </Actions>
           <Logos src={logosImg} />

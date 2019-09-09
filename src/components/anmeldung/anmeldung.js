@@ -66,6 +66,21 @@ export default class Anmeldung extends PureComponent {
     const end = e ? ` - ${new Date(e).toLocaleDateString('de-de')}` : ''
     return `${start}${end}`
   }
+
+  formatTime = (s, e) => {
+    const sd = new Date(s)
+    const ed = e ? new Date(e) : null
+    const start =
+      sd.getHours() != 1 && sd.getHours() != 0
+        ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        : ''
+    const end =
+      e && start != '' && ed.getHours() != 1 && sd.getHours() != 0
+        ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        : ''
+    return start != '' ? `Zeit: ${start} ${end != '' ? ` - ${end}` : ''}` : ''
+  }
+
   render() {
     const { data } = this.props
     return (
@@ -95,9 +110,12 @@ export default class Anmeldung extends PureComponent {
                     key={this.getKey(d.node.startDate, d.node.title)}
                     day={this.getDay(d.node.startDate)}
                     date={this.formatDate(d.node.startDate, d.node.endDate)}
+                    time={this.formatTime(d.node.startDate, d.node.endDate)}
                     title={d.node.title}
                     description={
-                      d.node.descriptionNode.childMarkdownRemark.html
+                      d.node.descriptionNode.childMarkdownRemark.html +
+                      '<br/>' +
+                      this.formatTime(d.node.startDate, d.node.endDate)
                     }
                   />
                 )

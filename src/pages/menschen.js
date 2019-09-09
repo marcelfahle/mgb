@@ -73,9 +73,8 @@ export default class Menschen extends PureComponent {
             <PersonGrid people={kollegium} />
             <SubheadFullDark>Schulpflegschaftvertreter</SubheadFullDark>
             <PFullDark>
-              Wir, Agnes Dexling und Frank Szubertowicz dürfen voller
-              Tatendrang, in diesem Schuljahr die Eltern der Mädchen des MGB
-              vertreten.
+              Wir, die jährlich neu gewählten Schulpflegschaftsvertreter, dürfen
+              voller Tatendrang die Eltern des MGB vertreten.
             </PFullDark>
             <PFullDark>
               Gerne sind wir für Sie Ansprechpartner bei Fragen, bei jeglichen
@@ -86,6 +85,41 @@ export default class Menschen extends PureComponent {
             <PFullDark>
               Wir danken Ihnen herzlich für das Vertrauen und freuen uns auf ein
               erfolgreiches Jahr.
+            </PFullDark>
+            <SubheadFullDark>F&ouml;rderverein</SubheadFullDark>
+            <PFullDark>
+              Die Mitglieder des Förderkreises des Mädchengymnasiums
+              Essen-Borbeck e. V. sind Eltern, Lehrer, ehemalige Schülerinnen
+              und Freunde unserer Schule. Seit seiner Gründung 1971 bemüht sich
+              der Förderkreis zu fördern und zu helfen, Initiativen
+              voranzutreiben und Lücken zu schließen, wo es Not tut. Dabei wird
+              die Schule im Interesse aller Schülerinnen unterstützt und zwar
+              beispielsweise durch folgende Angebote:
+              <br />- &quot;Offener Ganztag&quot;
+              <br />- Schulmensa und -bücherei
+              <br />- Instrumental-, Chor- und Theater-AGs
+              <br />- Sozialfond
+              <br />- Medienausstattung
+              <br />
+            </PFullDark>
+
+            <PFullDark>
+              Aber auch Sie haben die Möglichkeit den Förderkreis – und damit
+              die Schülerinnen – durch Ihren Beitritt voran zu bringen. Dafür
+              gibt es verschiedene Möglichkeiten:
+              <br />- Gerne können Sie sich aktiv mit Ihren Ideen oder Ihrer
+              Zeit in die Gestaltung des Schullebens einbringen
+              <br />- oder Sie unterstützen mit Ihrem Mitgliedsbeitrag oder
+              einer Spende den Schulalltag
+              <br />
+            </PFullDark>
+            <PFullDark>
+              Wir freuen uns, wenn Sie über
+              <a href="mailto:email@foerderkreis-mgb.de">
+                email@foerderkreis-mgb.de
+              </a>{' '}
+              oder auch telefonisch unter 0157 3484 10 85 Kontakt mit uns
+              aufnehmen.
             </PFullDark>
             <SubheadFullDark>Die Schülerinnenvertretung am MGB</SubheadFullDark>
             <PFullDark>
