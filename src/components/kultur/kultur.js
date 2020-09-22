@@ -321,7 +321,7 @@ export default class KulturHeader extends PureComponent {
                   <PLight>
                     Besonders ist dabei die Möglichkeit „Theater“ sogar als
                     Schulfach zu wählen. Im Wahlpflichtfach „Darstellendes
-                    Spiel“ können unsere Mädchen in Klasse 8 & 9 die ganze
+                    Spiel“ können unsere Mädchen in Klasse 9 & 10 die ganze
                     Bandbreite der Theaterarbeit kennenlernen. Dazu gehören -
                     neben dem Spiel auf unserer Aulabühne - das Entstehen eines
                     Theatertextes im Schreiben eigener Szenen, Stimmtraining,

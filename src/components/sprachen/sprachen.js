@@ -269,13 +269,13 @@ export default class MintHeader extends PureComponent {
               Fremdsprache im Differenzierungsbereich II.
               <br />
               <br />
-              Das Fach Russisch ist ab der achten Klasse wählbar und wird in der
-              Oberstufe bei ausreichendem Interesse als Grundkurs bis zum Abitur
-              geführt. Abiturprüfungen sind sowohl mündlich als auch schriftlich
-              im Fach Russisch möglich. Schülerinnen, die besondere Begabung und
-              Engagement im Bereich Fremdsprachen aufweisen, erhalten durch die
-              dritte Fremdsprache gute Voraussetzungen zusätzlich zum Abitur das
-              Excellenzlabel CertiLingua zu erwerben.
+              Das Fach Russisch ist ab der neunten Klasse wählbar und wird in
+              der Oberstufe bei ausreichendem Interesse als Grundkurs bis zum
+              Abitur geführt. Abiturprüfungen sind sowohl mündlich als auch
+              schriftlich im Fach Russisch möglich. Schülerinnen, die besondere
+              Begabung und Engagement im Bereich Fremdsprachen aufweisen,
+              erhalten durch die dritte Fremdsprache gute Voraussetzungen
+              zusätzlich zum Abitur das Excellenzlabel CertiLingua zu erwerben.
               <br />
               <br />
               Von 1999 bis 2013 bestand im Rahmen der Städtepartnerschaft Essen

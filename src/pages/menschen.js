@@ -120,6 +120,9 @@ export default class Menschen extends PureComponent {
               </a>{' '}
               oder auch telefonisch unter 0157 3484 10 85 Kontakt mit uns
               aufnehmen.
+              <br />
+              Die Satzung des Vereins und Mitgliedsanträge stehen im
+              Downloadbereich zur Verfügung.
             </PFullDark>
             <SubheadFullDark>Die Schülerinnenvertretung am MGB</SubheadFullDark>
             <PFullDark>

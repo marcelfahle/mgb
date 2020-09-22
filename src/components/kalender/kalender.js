@@ -244,7 +244,10 @@ export default class Kalender extends PureComponent {
           <SubheadMedium>VERANSTALTUNGEN UND TERMINE</SubheadMedium>
           <PSmallFullMedium>
             Ob nun Prüfungen anstehen, eine Reise oder eine Schulveranstaltung,
-            der alle entgegenfiebern – hier werden sie fündig.
+            der alle entgegenfiebern – hier werden sie fündig. <br />
+            <br />
+            Alle Termine stehen unter dem Vorbehalt, dass sich die Corona-Lage
+            weiterhin positiv entwickelt.
           </PSmallFullMedium>
 
           <Calender>

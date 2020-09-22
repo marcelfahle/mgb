@@ -99,7 +99,7 @@ export default class Anmeldung extends PureComponent {
           <PSmallFullMedium>
             <strong>
               Informationsveranstaltungen für Grundschuleltern  und
-              Grundschülerinnen Schuljahr 2019/20
+              Grundschülerinnen Schuljahr 2020/21
             </strong>
           </PSmallFullMedium>
           <Calender>

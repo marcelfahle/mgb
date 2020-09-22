@@ -113,10 +113,7 @@ export default class MintHeader extends PureComponent {
             <br />- die Schülerinnen/ Eltern erhalten mit jeder Klassenarbeit
             eine Rückmeldung zur sonstigen Mitarbeit im Unterricht, eine Reihe
             von Methoden und Kompetenzen werden in festgelegten Fächern eingeübt
-            und in verschiedenen Jahrgangsstufen wiederholt und vertieft. Die
-            Schülerinnen erhalten zu Beginn der Klasse 5 ein Methodenportfolio,
-            das sie im Laufe ihrer Schulzeit am MGB füllen und auf das sie immer
-            wieder fächerübergreifend zurückgreifen können.
+            und in verschiedenen Jahrgangsstufen wiederholt und vertieft.
             <br />
             <br />
           </PSmallFullMedium>
@@ -136,9 +133,8 @@ export default class MintHeader extends PureComponent {
             ressourcenorientierte Art der Lernberatung, die in mehreren
             Einzelsitzungen mit einem Lerncoach oder -berater stattfindet – für
             den Fall, dass es fachunabhängig mit dem Lernen einmal nicht so
-            klappen will. Zertifizierter Lerncoach nach SkiL® und dem ZRM ist
-            Frau Greppel, unterstützt wird sie zukünftig von Frau Schulz und
-            Herrn Attermeyer. Wir zaubern nicht, beraten und unterstützen aber
+            klappen will. Das MGB verfügt über zertifizierte Lerncoaches nach
+            SkiL® und dem ZRM. Wir zaubern nicht, beraten und unterstützen aber
             neutral bei individuellen Lernprozessen, vertraulich und
             ergebnisoffen, suchen gemeinsam nach Lösungen und Auswegen. Für
             Termine sprichst du am besten deine Klassenlehrer an.
