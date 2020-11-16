@@ -118,8 +118,7 @@ export default class Menschen extends PureComponent {
               <a href="mailto:email@foerderkreis-mgb.de">
                 email@foerderkreis-mgb.de
               </a>{' '}
-              oder auch telefonisch unter 0157 3484 10 85 Kontakt mit uns
-              aufnehmen.
+              Kontakt mit uns aufnehmen.
               <br />
               Die Satzung des Vereins und Mitgliedsanträge stehen im
               Downloadbereich zur Verfügung.

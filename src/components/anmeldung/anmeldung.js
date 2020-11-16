@@ -153,8 +153,14 @@ export default class Anmeldung extends PureComponent {
             </ul>
             <br />
             <br />
-            Die genannten Unterlagen müssen vollständig sein, sonst kann Ihre
-            Tochter nicht aufgenommen werden.
+            Über die Aufnahme Ihrer Tochter an unserer Schule entscheidet nicht
+            die Reihenfolge der Anmeldung, Sie können ohne Sorge einen für Sie
+            passenden Termin an einem der drei Tage vereinbaren.
+            <br />
+            Falls Sie noch Fragen zum Anmeldeverfahren haben oder einen
+            individuellen Gesprächstermin zur Beratung wünschen, sprechen Sie
+            uns bitte über das Sekretariat bei Frau Busch (Tel: 0201/8877562)
+            an. Wir beraten Sie gerne!
           </TypoDiv>
         </Content>
       </Section>
