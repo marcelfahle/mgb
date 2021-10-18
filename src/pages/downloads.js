@@ -25,7 +25,6 @@ export const query = graphql`
           download {
             filename
             file {
-              id
               url
             }
           }

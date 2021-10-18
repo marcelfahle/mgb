@@ -23,7 +23,6 @@ export const query = graphql`
           name
           subjects
           photo {
-            id
             url
           }
         }
