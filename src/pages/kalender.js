@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   console.log('kalendar data ', data)
   return (
     <layout>
-      <kalender data={data.alldatocmscalendar.edges} />
+      <kalender data={data.allDatoCmsCalendar.edges} />
     </layout>
   )
 }
