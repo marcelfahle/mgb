@@ -206,12 +206,12 @@ export default class Kalender extends PureComponent {
     const start =
       sd.getHours() != 1 && sd.getHours() != 0
         ? // ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
-          timeString(sd)
+          this.timeString(sd)
         : ''
     const end =
       e && start != '' && ed.getHours() != 1 && sd.getHours() != 0
         ? // ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
-          timeString(ed)
+          this.timeString(ed)
         : ''
     return start != '' ? `Zeit: ${start} ${end != '' ? ` - ${end}` : ''}` : ''
   }
