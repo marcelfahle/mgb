@@ -156,7 +156,8 @@ export default class Kalender extends PureComponent {
     const current = mom().locale('de')
     current.locale('de')
     const i = months.findIndex(
-      e => this.getEnMonth(new Date(e.node.startDate)) == current.format('MMMM')
+      (e) =>
+        this.getEnMonth(new Date(e.node.startDate)) == current.format('MMMM')
     )
     return i
   }
@@ -166,7 +167,7 @@ export default class Kalender extends PureComponent {
     this.setState({ current: i })
   }
 
-  nextMonth = e => {
+  nextMonth = (e) => {
     e.preventDefault()
     this.setState({
       current:
@@ -175,7 +176,7 @@ export default class Kalender extends PureComponent {
           : this.state.current + 1,
     })
   }
-  previousMonth = e => {
+  previousMonth = (e) => {
     e.preventDefault()
     this.setState({
       current:
@@ -185,11 +186,11 @@ export default class Kalender extends PureComponent {
     })
   }
 
-  getEnMonth = d => d.toLocaleString('en-GB', { month: 'long' })
+  getEnMonth = (d) => d.toLocaleString('en-GB', { month: 'long' })
 
-  getMonth = d => d.toLocaleString('de-de', { month: 'long' })
+  getMonth = (d) => d.toLocaleString('de-de', { month: 'long' })
 
-  getDay = d => new Date(d).toLocaleString('de-de', { day: '2-digit' })
+  getDay = (d) => new Date(d).toLocaleString('de-de', { day: '2-digit' })
 
   getKey = (d, t) => `${d.replace(/\s/g, '')}-${t.replace(/\s/g, '')}`
 
@@ -204,18 +205,25 @@ export default class Kalender extends PureComponent {
     const ed = e ? new Date(e) : null
     const start =
       sd.getHours() != 1 && sd.getHours() != 0
-        ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        ? // ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+          timeString(sd)
         : ''
     const end =
       e && start != '' && ed.getHours() != 1 && sd.getHours() != 0
-        ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+        ? // ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
+          timeString(ed)
         : ''
     return start != '' ? `Zeit: ${start} ${end != '' ? ` - ${end}` : ''}` : ''
   }
 
+  timeString = (d) => {
+    const dd = [d.getHours(), d.getMinutes()].map((a) => (a < 10 ? '0' + a : a))
+    return dd.join(':')
+  }
+
   allMonths = () => {
     const months = {}
-    return this.props.data.filter(d => {
+    return this.props.data.filter((d) => {
       const month = this.getMonth(new Date(d.node.startDate))
       return months.hasOwnProperty(month) ? false : (months[month] = month)
     })
@@ -258,7 +266,7 @@ export default class Kalender extends PureComponent {
                   expired={lastMonth > new Date(m.node.startDate)}
                   selected={this.state.current == i}
                 >
-                  <a href="#" onClick={e => this.goto(i, e)}>
+                  <a href="#" onClick={(e) => this.goto(i, e)}>
                     {this.getMonth(new Date(m.node.startDate))}
                   </a>
                 </Month>
@@ -292,7 +300,7 @@ export default class Kalender extends PureComponent {
             </TableHeader>
 
             <Events>
-              {data.map(d => {
+              {data.map((d) => {
                 const date = mom(d.node.startDate)
                 return currentRange && date.within(currentRange) ? (
                   <Event
