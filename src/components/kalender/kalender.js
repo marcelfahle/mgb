@@ -201,15 +201,17 @@ export default class Kalender extends PureComponent {
   }
 
   formatTime = (s, e) => {
-    const sd = new Date(s)
-    const ed = e ? new Date(e) : null
+    // const sd = new Date(s)
+    const sf = s.split('T')[1].split('+')[0].substring().substr(0, 5)
+    const ef = e.split('T')[1].split('+')[0].substring().substr(0, 5)
+    // const ed = e ? new Date(e) : null
     const start =
-      sd.getHours() != 1 && sd.getHours() != 0
+      sf !== '00:00'
         ? // ? sd.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
           s.split('T')[1].split('+')[0].substring().substr(0, 5)
         : ''
     const end =
-      e && start != '' && ed.getHours() != 1 && sd.getHours() != 0
+      ef !== '00:00'
         ? // ? ed.toLocaleTimeString('de-de', { hour: '2-digit', minute: '2-digit' })
           e.split('T')[1].split('+')[0].substring().substr(0, 5)
         : ''
