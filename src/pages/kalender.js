@@ -7,14 +7,11 @@ import Kalender from '../components/kalender/kalender'
 
 import Layout from '../layouts/'
 
-const IndexPage = ({ data }) => {
-  console.log('kalendar data ', data)
-  return (
-    <layout>
-      <kalender data={data.allDatoCmsCalendar.edges} />
-    </layout>
-  )
-}
+const IndexPage = ({ data }) => (
+  <Layout>
+    <Kalender data={data.allDatoCmsCalendar.edges} />
+  </Layout>
+)
 
 export default IndexPage
 
