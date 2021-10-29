@@ -93,7 +93,7 @@ export default class Anmeldung extends PureComponent {
         </Header>
         <Content>
           <SubheadMedium>
-            Zu den Anmeldungetagen freuen wir uns, Sie und Ihre Tochter bei uns
+            Zu den Anmeldetagen freuen wir uns, Sie und Ihre Tochter bei uns
             zu begrüßen.
           </SubheadMedium>
           <PSmallFullMedium>
