@@ -55,9 +55,9 @@ const Events = styled.ul`
 `
 
 export default class Anmeldung extends PureComponent {
-  getMonth = d => d.toLocaleString('de-de', { month: 'long' })
+  getMonth = (d) => d.toLocaleString('de-de', { month: 'long' })
 
-  getDay = d => new Date(d).toLocaleString('de-de', { day: '2-digit' })
+  getDay = (d) => new Date(d).toLocaleString('de-de', { day: '2-digit' })
 
   getKey = (d, t) => `${d.replace(/\s/g, '')}-${t.replace(/\s/g, '')}`
 
@@ -93,8 +93,8 @@ export default class Anmeldung extends PureComponent {
         </Header>
         <Content>
           <SubheadMedium>
-            Zu den Anmeldetagen freuen wir uns, Sie und Ihre Tochter bei uns
-            zu begrüßen.
+            Zu den Anmeldetagen freuen wir uns, Sie und Ihre Tochter bei uns zu
+            begrüßen.
           </SubheadMedium>
           <PSmallFullMedium>
             <strong>
@@ -104,7 +104,7 @@ export default class Anmeldung extends PureComponent {
           </PSmallFullMedium>
           <Calender>
             <Events>
-              {data.map(d => {
+              {data.map((d) => {
                 return (
                   <Event
                     key={this.getKey(d.node.startDate, d.node.title)}
