@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { withPrefix } from 'gatsby-link'
@@ -150,7 +150,7 @@ const LinkWrapper = styled.div`
 moment.locale('de')
 const mom = extendMoment(moment)
 
-export default class Kalender extends PureComponent {
+export default class Kalender extends Component {
   getMonthIndex = () => {
     const months = this.allMonths(this.props.data)
     const current = mom().locale('de')
@@ -237,6 +237,7 @@ export default class Kalender extends PureComponent {
   }
 
   render() {
+    console.log('render')
     const { data } = this.props
     const months = this.allMonths()
 
@@ -303,7 +304,6 @@ export default class Kalender extends PureComponent {
 
             <Events>
               {data.map((d) => {
-                console.log('dddd', d)
                 const date = mom(d.node.startDate)
                 return currentRange && date.within(currentRange) ? (
                   <Event

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { mq, rem } from '../util'
 import { P } from '../typo'
@@ -89,7 +89,7 @@ const Description = styled.div`
 	`};
   ${mq.greaterThan('small')`
 		font-size: 20px;
-		p { 
+		p {
 			margin: 0.4em 0;
 		}
 
@@ -100,7 +100,7 @@ const Description = styled.div`
 	`};
 `
 
-export default class Event extends PureComponent {
+export default class Event extends Component {
   render() {
     const { day, date, title, description } = this.props
     return (
