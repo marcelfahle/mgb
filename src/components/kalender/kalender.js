@@ -303,10 +303,11 @@ export default class Kalender extends PureComponent {
 
             <Events>
               {data.map((d) => {
+                console.log('dddd', d)
                 const date = mom(d.node.startDate)
                 return currentRange && date.within(currentRange) ? (
                   <Event
-                    key={this.getKey(d.node.startDate, d.node.title)}
+                    key={`${d.node.startDate}${d.node.title}`}
                     day={this.getDay(d.node.startDate)}
                     date={this.formatDate(d.node.startDate, d.node.endDate)}
                     time={this.formatTime(d.node.startDate, d.node.endDate)}
