@@ -1,8 +1,5 @@
 module.exports = {
   pathPrefix: `/`,
-  flags: {
-    FAST_DEV: true,
-  },
   siteMetadata: {
     title: 'Städtisches Mädchengymnasium Borbeck',
   },

@@ -151,6 +151,21 @@ moment.locale('de')
 const mom = extendMoment(moment)
 
 export default class Kalender extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isServer: true,
+      current: this.getMonthIndex(),
+      months: this.allMonths(this.props.data),
+    }
+  }
+
+  componentDidMount() {
+    console.log('did mount')
+    this.setState({
+      isServer: false,
+    })
+  }
   getMonthIndex = () => {
     const months = this.allMonths(this.props.data)
     const current = mom().locale('de')
@@ -231,13 +246,11 @@ export default class Kalender extends Component {
     })
   }
 
-  state = {
-    current: this.getMonthIndex(),
-    months: this.allMonths(this.props.data),
-  }
-
   render() {
-    console.log('render')
+    const { isServer } = this.state
+    if (isServer) return null
+    console.log('render', isServer)
+
     const { data } = this.props
     const months = this.allMonths()
 
