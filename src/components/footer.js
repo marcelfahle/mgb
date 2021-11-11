@@ -95,11 +95,11 @@ const FBLink = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   line-height: 40px;
-	padding: 20px;
+  padding: 20px;
   ${mq.greaterThan('tablet')`
 		padding: 0px;
 	`};
-	${mq.greaterThan('huge')`
+  ${mq.greaterThan('huge')`
 		line-height: 90px;
 	`}
   color: white;
@@ -111,8 +111,8 @@ const FBLink = styled.a`
   }
   img {
     vertical-align: bottom;
-		width: 40px;
-		
+    width: 40px;
+
     margin-right: 10px;
     ${mq.greaterThan('medium')`
 
@@ -198,16 +198,16 @@ export default class Footer extends PureComponent {
           </FBLink>
         </AddressCol>
         <SocialCol>
-          <iframe
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt%25C3%25A4dtisches-M%25C3%25A4dchengymnasium-Essen-Borbeck-174439166464921%2F&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=118833648248957"
-            width="340"
-            height="800"
-            style={{ border: 'none', overflow: 'hidden' }}
-            scrolling="no"
-            frameBorder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-          />
+          {/* <iframe */}
+          {/*   src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSt%25C3%25A4dtisches-M%25C3%25A4dchengymnasium-Essen-Borbeck-174439166464921%2F&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=118833648248957" */}
+          {/*   width="340" */}
+          {/*   height="800" */}
+          {/*   style={{ border: 'none', overflow: 'hidden' }} */}
+          {/*   scrolling="no" */}
+          {/*   frameBorder="0" */}
+          {/*   allowtransparency="true" */}
+          {/*   allow="encrypted-media" */}
+          {/* /> */}
         </SocialCol>
       </Wrapper>
     )
