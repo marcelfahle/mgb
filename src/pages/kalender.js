@@ -9,7 +9,7 @@ import Layout from '../layouts/'
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Kalender data={data.allDatoCmsCalendar.edges} />
+    <Kalender data={data.allDatoCmsCalendar.edges} key="kalender" />
   </Layout>
 )
 
